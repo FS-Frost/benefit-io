@@ -1,11 +1,17 @@
 <script lang="ts">
     import text from "$lib/text";
     import { onMount } from "svelte";
-    import { Oferta, Producto, type Descuento } from "$lib/beneficios";
+    import { Oferta, Producto, type Proveedor } from "$lib/beneficios";
     import { data } from "$lib/data";
     import { z } from "zod";
 
     let dias: InfoDia[] = [];
+
+    let proveedores: Proveedor[] = [];
+
+    let proveedorSeleccionado: string = "";
+
+    let filtrosVisibles: boolean = false;
 
     const InfoProducto = Producto.extend({
         ofertas: Oferta.array(),
@@ -104,22 +110,70 @@
         </div>
     </div>
 
-    <div class="filtros">
-        <!-- <div class="field">
-            <label class="label" for="">Institución</label>
-            <div class="select">
-                <select bind:value={proveedorSeleccionado}>
-                    {#each proveedores as proveedor}
-                        <option value={proveedor.nombre}>
-                            {proveedor.nombre}
-                        </option>
-                    {/each}
-                </select>
-            </div>
-        </div> -->
-    </div>
+    <button
+        class="button is-link"
+        on:click={() => (filtrosVisibles = !filtrosVisibles)}
+    >
+        Filtrar beneficios
+    </button>
 
-    <div class="descuentos">
+    {#if filtrosVisibles}
+        <div class="filtros mt-2">
+            <div class="field">
+                <label class="label" for="">Institución</label>
+                <div class="select">
+                    <select bind:value={proveedorSeleccionado}>
+                        {#each proveedores as proveedor}
+                            <option value={proveedor.nombre}>
+                                {proveedor.nombre}
+                            </option>
+                        {/each}
+                    </select>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="">Producto</label>
+                <div class="select">
+                    <select bind:value={proveedorSeleccionado}>
+                        {#each proveedores as proveedor}
+                            <option value={proveedor.nombre}>
+                                {proveedor.nombre}
+                            </option>
+                        {/each}
+                    </select>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="">Día de la semana</label>
+                <div class="select">
+                    <select bind:value={proveedorSeleccionado}>
+                        {#each proveedores as proveedor}
+                            <option value={proveedor.nombre}>
+                                {proveedor.nombre}
+                            </option>
+                        {/each}
+                    </select>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="">Local</label>
+                <div class="select">
+                    <select bind:value={proveedorSeleccionado}>
+                        {#each proveedores as proveedor}
+                            <option value={proveedor.nombre}>
+                                {proveedor.nombre}
+                            </option>
+                        {/each}
+                    </select>
+                </div>
+            </div>
+        </div>
+    {/if}
+
+    <div class="descuentos mt-4">
         {#each dias as dia}
             <div class="dia">
                 <div class="subtitulo">Septiembre: {dia.dia}</div>
@@ -149,12 +203,13 @@
         justify-content: space-between;
     }
 
-    button {
-        color: white;
-        font-weight: bold;
+    .filtros {
+        display: flex;
+        flex-direction: column;
         width: 100%;
     }
 
+    button,
     select,
     .select {
         width: 100%;
