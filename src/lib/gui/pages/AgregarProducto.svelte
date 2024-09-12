@@ -1,29 +1,84 @@
 <script lang="ts">
     import text from "$lib/text";
     import { onMount } from "svelte";
-    import type { Proveedor } from "$lib/beneficios";
+    import { data } from "$lib/data";
+    import { KEY_PRODUCTOS } from "$lib/session";
+    import { Producto } from "$lib/beneficios";
 
-    let proveedores: Proveedor[] = [];
+    let proveedores: string[] = [];
+    let productos: string[] = [];
     let proveedorSeleccionado: string = "";
     let productoSeleccionado: string = "";
 
-    $: productos = proveedores.find((x) => x.nombre === proveedorSeleccionado)?.productos ?? [];
+    function filtrarProveedores(): void {
+        console.log("filtrarProveedores");
+        proveedores = [];
+        productos = [];
+        proveedorSeleccionado = "";
+        productoSeleccionado = "";
+
+        for (const descuento of data) {
+            if (!proveedores.includes(descuento.proveedor)) {
+                proveedores.push(descuento.proveedor);
+            }
+        }
+
+        proveedores = [...proveedores];
+    }
+
+    function filtrarProductos(): void {
+        console.log("filtrarProductos");
+        productos = [];
+
+        for (const descuento of data) {
+            if (proveedorSeleccionado.length > 0) {
+                if (descuento.proveedor !== proveedorSeleccionado) {
+                    continue;
+                }
+            }
+
+            if (!productos.includes(descuento.producto)) {
+                productos.push(descuento.producto);
+            }
+        }
+
+        productos = [...productos];
+    }
+
+    function agregarProducto(): void {
+        let productosUsuario: Producto[] = [];
+
+        try {
+            const rawProductosUsuario =
+                localStorage.getItem(KEY_PRODUCTOS) ?? "[]";
+
+            productosUsuario = Producto.array().parse(
+                JSON.parse(rawProductosUsuario),
+            );
+        } catch (error) {
+            console.error("error al obtener productos guardados", error);
+        }
+
+        const productoGuardado = productosUsuario.find(
+            (x) =>
+                x.proveedor === proveedorSeleccionado &&
+                x.nombre === productoSeleccionado,
+        );
+
+        if (productoGuardado == null) {
+            productosUsuario.push({
+                nombre: productoSeleccionado,
+                proveedor: proveedorSeleccionado,
+            });
+        }
+
+        localStorage.setItem(KEY_PRODUCTOS, JSON.stringify(productosUsuario));
+
+        alert("Producto guardado.");
+    }
 
     onMount(() => {
-        proveedores = [
-            {
-                nombre: "Banco de Chile",
-                productos: ["Tarjeta de débito", "Tarjeta de crédito - Black"],
-            },
-            {
-                nombre: "Banco Santander",
-                productos: ["Tarjeta de débito", "Tarjeta de crédito Platinium"],
-            },
-            {
-                nombre: "Banco BCI",
-                productos: ["Tarjeta de crédito - BCI Plus"],
-            },
-        ];
+        filtrarProveedores();
     });
 </script>
 
@@ -41,10 +96,13 @@
     <div class="field">
         <label class="label" for="">Institución</label>
         <div class="select">
-            <select bind:value={proveedorSeleccionado}>
+            <select
+                bind:value={proveedorSeleccionado}
+                on:click={() => filtrarProductos()}
+            >
                 {#each proveedores as proveedor}
-                    <option value={proveedor.nombre}>
-                        {proveedor.nombre}
+                    <option value={proveedor}>
+                        {proveedor}
                     </option>
                 {/each}
             </select>
@@ -54,7 +112,10 @@
     <div class="field">
         <label class="label" for="">Producto</label>
         <div class="select">
-            <select bind:value={productoSeleccionado} disabled={productos.length === 0}>
+            <select
+                bind:value={productoSeleccionado}
+                disabled={productos.length === 0}
+            >
                 {#each productos as producto}
                     <option value={producto}>
                         {producto}
@@ -65,7 +126,13 @@
     </div>
 
     <div class="buttons">
-        <button class="button is-success" disabled={productoSeleccionado.length == 0}> Añadir producto </button>
+        <button
+            class="button is-success"
+            disabled={productoSeleccionado.length == 0}
+            on:click={() => agregarProducto()}
+        >
+            Añadir producto
+        </button>
     </div>
 </section>
 

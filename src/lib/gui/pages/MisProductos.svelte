@@ -1,39 +1,55 @@
 <script lang="ts">
     import text from "$lib/text";
     import { onMount } from "svelte";
-    import type { Producto } from "$lib/beneficios";
+    import { Producto } from "$lib/beneficios";
     import ProductosRegistrados from "../ProductosRegistrados.svelte";
+    import { KEY_PRODUCTOS } from "$lib/session";
 
     let listasProductos: Producto[][] = [];
 
     onMount(() => {
-        const productosUsuario: Producto[] = [
-            {
-                nombre: "Tarjeta de débito",
-                proveedor: "Banco de Chile",
-            },
-            {
-                nombre: "Tarjeta de crédito - Black",
-                proveedor: "Banco de Chile",
-            },
-            {
-                nombre: "Tarjeta de débito",
-                proveedor: "Banco Santander",
-            },
-            {
-                nombre: "Tarjeta de crédito Platinium",
-                proveedor: "Banco Santander",
-            },
-            {
-                nombre: "Tarjeta de crédito - BCI Plus",
-                proveedor: "Banco BCI",
-            },
-        ];
+        // const productosUsuario: Producto[] = [
+        //     {
+        //         nombre: "Tarjeta de débito",
+        //         proveedor: "Banco de Chile",
+        //     },
+        //     {
+        //         nombre: "Tarjeta de crédito - Black",
+        //         proveedor: "Banco de Chile",
+        //     },
+        //     {
+        //         nombre: "Tarjeta de débito",
+        //         proveedor: "Banco Santander",
+        //     },
+        //     {
+        //         nombre: "Tarjeta de crédito Platinium",
+        //         proveedor: "Banco Santander",
+        //     },
+        //     {
+        //         nombre: "Tarjeta de crédito - BCI Plus",
+        //         proveedor: "Banco BCI",
+        //     },
+        // ];
+
+        let productosUsuario: Producto[] = [];
+
+        try {
+            const rawProductosUsuario =
+                localStorage.getItem(KEY_PRODUCTOS) ?? "[]";
+
+            productosUsuario = Producto.array().parse(
+                JSON.parse(rawProductosUsuario),
+            );
+        } catch (error) {
+            console.error("error al obtener productos guardados", error);
+        }
 
         listasProductos = [];
 
         for (const producto of productosUsuario) {
-            const lista = listasProductos.find((lista) => lista.some((p) => p.proveedor === producto.proveedor));
+            const lista = listasProductos.find((lista) =>
+                lista.some((p) => p.proveedor === producto.proveedor),
+            );
             if (lista == null) {
                 listasProductos.push([producto]);
                 continue;
@@ -56,7 +72,7 @@
     </div>
 
     {#each listasProductos as productos}
-        <ProductosRegistrados {productos} />
+        <ProductosRegistrados bind:productos />
     {/each}
 </section>
 
