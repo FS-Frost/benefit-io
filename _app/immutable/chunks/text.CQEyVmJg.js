@@ -1,0 +1,1 @@
+import{w as t}from"./index.M7WuUczP.js";const c=["inicio","acercaDe"],i=c.map(e=>e.toString()),r=t();function n(e){return i.includes(e)}const a="Benefit.io",o={appName:a,acercaDe:`Acerca de ${a}`};function p(e){return e.charAt(0).toUpperCase()+e.slice(1)}export{r as a,p as c,n as i,o as t};
