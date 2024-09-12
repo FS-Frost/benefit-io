@@ -44,7 +44,13 @@
 
     <div bind:this={navMenu} class="navbar-menu" id="navMenu">
         <div class="navbar-start">
-            <NavItem text="Inicio" page="inicio" />
+            <NavItem text={text.paginaBeneficios} page="inicio" />
+
+            <NavItem text={text.paginaProductos} page="mis-productos" />
+
+            <NavItem text={text.paginaExplorar} page="explorar-beneficios" />
+
+            <NavItem text={text.paginaAgregarProductos} page="agregar-productos" />
 
             <NavItem text={text.acercaDe} page="acercaDe" />
         </div>

@@ -3,6 +3,8 @@
     import { onMount } from "svelte";
     import AcercaDe from "$lib/gui/pages/AcercaDe.svelte";
     import Inicio from "$lib/gui/pages/Inicio.svelte";
+    import MisProductos from "$lib/gui/pages/MisProductos.svelte";
+    import AgregarProducto from "$lib/gui/pages/AgregarProducto.svelte";
 
     let page: ActivePage;
 
@@ -24,6 +26,10 @@
 
 {#if page == "inicio"}
     <Inicio />
+{:else if page == "mis-productos"}
+    <MisProductos />
+{:else if page == "agregar-productos"}
+    <AgregarProducto />
 {:else if page == "acercaDe"}
     <AcercaDe />
 {/if}

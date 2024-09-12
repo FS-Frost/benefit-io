@@ -115,7 +115,3 @@ button:focus:not(:focus-visible) {
 main {
 	background-color: var(--main-color);
 }
-
-.button {
-	background-color: var(--color2);
-}

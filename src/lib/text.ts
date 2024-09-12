@@ -2,6 +2,10 @@ const appName: string = "Benefit.io";
 
 export default {
     appName: appName,
+    paginaBeneficios: "Mis beneficios",
+    paginaProductos: "Mis productos",
+    paginaExplorar: "Explorar beneficios",
+    paginaAgregarProductos: "Añadir productos",
     acercaDe: `Acerca de ${appName}`,
 };
 

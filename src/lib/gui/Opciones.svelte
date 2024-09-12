@@ -1,20 +1,24 @@
+<script>
+    import { activePage } from "$lib/activePage";
+</script>
+
 <div class="opciones">
-    <div class="opcion">
+    <div class="opcion" on:click={() => activePage.set("inicio")} on:keydown={() => {}} role="button" tabindex="0">
         <i class="fa-solid fa-percent"></i>
         <span>Mis beneficios</span>
     </div>
 
-    <div class="opcion">
+    <div class="opcion" on:click={() => activePage.set("mis-productos")} on:keydown={() => {}} role="button" tabindex="0">
         <i class="fa-solid fa-credit-card"></i>
         <span>Mis productos</span>
     </div>
 
-    <div class="opcion">
+    <div class="opcion" on:click={() => activePage.set("explorar-beneficios")} on:keydown={() => {}} role="button" tabindex="0">
         <i class="fa-solid fa-compass"></i>
         <span>Explorar beneficios</span>
     </div>
 
-    <div class="opcion">
+    <div class="opcion" on:click={() => activePage.set("agregar-productos")} on:keydown={() => {}} role="button" tabindex="0">
         <i class="fa-solid fa-plus"></i>
         <span>Añadir productos</span>
     </div>
@@ -24,6 +28,7 @@
     .opciones {
         display: flex;
         justify-content: space-between;
+        flex-flow: wrap;
     }
 
     .opcion {
@@ -38,6 +43,7 @@
         width: 7rem;
         height: 7rem;
         font-size: small;
+        margin: 0.5rem;
     }
 
     .opcion:hover {

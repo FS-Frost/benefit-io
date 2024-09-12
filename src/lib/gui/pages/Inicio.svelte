@@ -1,9 +1,8 @@
 <script lang="ts">
-    import text, { capitalizeFirstLetter, titleCase } from "$lib/text";
+    import text, { capitalizeFirstLetter } from "$lib/text";
     import { onMount } from "svelte";
     import VistaBeneficio from "../VistaBeneficio.svelte";
     import type { Beneficio } from "$lib/beneficios";
-    import Opciones from "../Opciones.svelte";
 
     let fecha: string = "";
 
@@ -16,7 +15,7 @@
                 day: "numeric",
                 month: "long",
                 weekday: "long",
-            }),
+            })
         );
 
         beneficios = [
@@ -67,26 +66,6 @@
 </svelte:head>
 
 <section class="inicio">
-    <!-- Buscar beneficios -->
-    <div class="field">
-        <div class="control has-icons-left has-icons-right">
-            <input
-                class="input"
-                type="search"
-                placeholder="Buscar beneficios"
-            />
-            <span class="icon is-small is-left">
-                <i class="fas fa-magnifying-glass"></i>
-            </span>
-        </div>
-    </div>
-
-    <!-- Título -->
-    <div class="title is-3">{text.appName}</div>
-
-    <hr />
-
-    <!-- Mis beneficios -->
     <div class="mis-beneficios mb-4">
         <div class="titulo-beneficios">
             <div class="title is-3">Mis beneficios</div>
@@ -95,7 +74,7 @@
         </div>
 
         <div class="opciones">
-            <button class="button">
+            <button class="button" on:click={() => alert("No implementado.")}>
                 <i class="fa-solid fa-sliders"></i>
             </button>
         </div>
@@ -104,8 +83,6 @@
     {#each beneficios as beneficio}
         <VistaBeneficio {beneficio} />
     {/each}
-
-    <Opciones />
 </section>
 
 <style>
@@ -117,12 +94,16 @@
         color: rgb(183, 183, 183);
     }
 
-    hr {
-        background-color: #4c4c4c;
-    }
-
     .mis-beneficios {
         display: flex;
         justify-content: space-between;
+    }
+
+    .opciones button {
+        font-size: large;
+    }
+
+    .button {
+        background-color: var(--color2);
     }
 </style>

@@ -1,5 +1,19 @@
 import { z } from "zod";
 
+export const Proveedor = z.object({
+    nombre: z.string(),
+    productos: z.string().array(),
+});
+
+export type Proveedor = z.infer<typeof Proveedor>;
+
+export const Producto = z.object({
+    nombre: z.string(),
+    proveedor: z.string(),
+});
+
+export type Producto = z.infer<typeof Producto>;
+
 export const Oferta = z.object({
     tienda: z.string(),
     descuento: z.number(),
