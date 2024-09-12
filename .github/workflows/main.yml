@@ -24,8 +24,8 @@ jobs:
               run: |
                   bun run build
 
-            - name: Change base-tag in index.html from / to benefit
-              run: sed -i 's/<base href="\/" \/>/<base href="\/benefit\/" \/>/g' build/index.html
+            - name: Change base-tag in index.html from / to benefit-io
+              run: sed -i 's/<base href="\/" \/>/<base href="\/benefit-io\/" \/>/g' build/index.html
 
             - name: Generate build info
               run: |
