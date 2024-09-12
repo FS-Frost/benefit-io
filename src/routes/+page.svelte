@@ -20,7 +20,9 @@
 <hr />
 
 <!-- Contenido -->
-<Router />
+<div class="router">
+    <Router />
+</div>
 
 <hr />
 
@@ -33,5 +35,10 @@
 
     hr {
         background-color: #4c4c4c;
+    }
+
+    .router {
+        height: 22rem;
+        overflow: auto;
     }
 </style>
