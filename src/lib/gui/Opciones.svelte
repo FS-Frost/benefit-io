@@ -1,27 +1,57 @@
-<script>
-    import { activePage } from "$lib/activePage";
+<script lang="ts">
+    import { activePage, type ActivePage } from "$lib/activePage";
+    import text from "$lib/text";
+    import { onMount } from "svelte";
+
+    type Opcion = {
+        icon: string;
+        page: ActivePage;
+        text: string;
+    };
+
+    const opciones: Opcion[] = [
+        {
+            icon: "fa-percent",
+            page: "inicio",
+            text: text.paginaBeneficios,
+        },
+        {
+            icon: "fa-credit-card",
+            page: "mis-productos",
+            text: text.paginaProductos,
+        },
+        {
+            icon: "fa-compass",
+            page: "explorar-beneficios",
+            text: text.paginaExplorar,
+        },
+        {
+            icon: "fa-plus",
+            page: "agregar-productos",
+            text: text.paginaAgregarProductos,
+        },
+    ];
+
+    let currentPage: ActivePage = "inicio";
+
+    onMount(() => {
+        activePage.subscribe((newActivePage) => {
+            currentPage = newActivePage;
+        });
+    });
 </script>
 
 <div class="opciones">
-    <div class="opcion" on:click={() => activePage.set("inicio")} on:keydown={() => {}} role="button" tabindex="0">
-        <i class="fa-solid fa-percent"></i>
-        <span>Mis beneficios</span>
-    </div>
-
-    <div class="opcion" on:click={() => activePage.set("mis-productos")} on:keydown={() => {}} role="button" tabindex="0">
-        <i class="fa-solid fa-credit-card"></i>
-        <span>Mis productos</span>
-    </div>
-
-    <div class="opcion" on:click={() => activePage.set("explorar-beneficios")} on:keydown={() => {}} role="button" tabindex="0">
-        <i class="fa-solid fa-compass"></i>
-        <span>Explorar beneficios</span>
-    </div>
-
-    <div class="opcion" on:click={() => activePage.set("agregar-productos")} on:keydown={() => {}} role="button" tabindex="0">
-        <i class="fa-solid fa-plus"></i>
-        <span>Añadir productos</span>
-    </div>
+    {#each opciones as opcion}
+        <a
+            class={`opcion ${currentPage === opcion.page ? "active" : ""}`}
+            on:click={() => activePage.set(opcion.page)}
+            href={`?pagina=${opcion.page}`}
+        >
+            <i class={`fa-solid ${opcion.icon}`}></i>
+            <span>{opcion.text}</span>
+        </a>
+    {/each}
 </div>
 
 <style>
@@ -58,5 +88,9 @@
     .opcion span {
         margin-top: 0.3rem;
         text-align: center;
+    }
+
+    .opcion.active {
+        background-color: rgb(70, 128, 45);
     }
 </style>
