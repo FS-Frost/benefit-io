@@ -15,13 +15,13 @@
                 day: "numeric",
                 month: "long",
                 weekday: "long",
-            })
+            }),
         );
 
         beneficios = [
             {
                 proveedor: "Banco de Chile",
-                medio: "Crédito Visa",
+                producto: "Crédito Visa",
                 ofertas: [
                     {
                         tienda: "NAOKI",
@@ -31,7 +31,7 @@
             },
             {
                 proveedor: "Banco Santander",
-                medio: "Crédito WM LIM",
+                producto: "Crédito WM LIM",
                 ofertas: [
                     {
                         tienda: "NAOKI",
@@ -45,7 +45,7 @@
             },
             {
                 proveedor: "Banco Falabella",
-                medio: "Débito",
+                producto: "Débito",
                 ofertas: [
                     {
                         tienda: "TIGRE BRAVO",

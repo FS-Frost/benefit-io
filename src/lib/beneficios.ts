@@ -23,8 +23,19 @@ export type Oferta = z.infer<typeof Oferta>;
 
 export const Beneficio = z.object({
     proveedor: z.string(),
-    medio: z.string(),
+    producto: z.string(),
     ofertas: Oferta.array(),
 });
 
 export type Beneficio = z.infer<typeof Beneficio>;
+
+export const Descuento = z.object({
+    ciudad: z.string(),
+    dia: z.string(),
+    proveedor: z.string(),
+    producto: z.string(),
+    tienda: z.string(),
+    descuento: z.number(),
+});
+
+export type Descuento = z.infer<typeof Descuento>;

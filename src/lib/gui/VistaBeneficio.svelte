@@ -6,12 +6,13 @@
 
 <div class="beneficio">
     <div class="info">
-        {beneficio.proveedor} - {beneficio.medio}
+        {beneficio.proveedor} - {beneficio.producto}
     </div>
 
     {#each beneficio.ofertas as oferta}
         <div class="oferta">
-            {oferta.tienda} | {oferta.descuento} %
+            <span>{oferta.tienda}</span>
+            <span>{oferta.descuento} %</span>
         </div>
     {/each}
 </div>
@@ -28,5 +29,7 @@
 
     .oferta {
         color: rgb(120, 204, 85);
+        display: flex;
+        justify-content: space-between;
     }
 </style>
