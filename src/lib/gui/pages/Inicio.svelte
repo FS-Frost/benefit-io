@@ -11,6 +11,7 @@
     import { data } from "$lib/data";
     import { z } from "zod";
     import { KEY_PRODUCTOS } from "$lib/session";
+    import { activePage } from "$lib/activePage";
 
     let infoDias: InfoDia[] = [];
 
@@ -166,13 +167,30 @@
         </div>
 
         <div class="opciones">
-            <button class="button" on:click={() => alert("No implementado.")}>
+            <button
+                class="button button-opciones"
+                on:click={() => alert("No implementado.")}
+            >
                 <i class="fa-solid fa-sliders"></i>
             </button>
         </div>
     </div>
 
     <div class="descuentos mt-4">
+        {#if infoDias.length == 0}
+            <p class="mb-4">
+                No tienes beneficios para hoy. ¿Tienes alguna tarjeta?
+                ¡Agrégala!
+            </p>
+
+            <button
+                class="button is-success is-fullwidth"
+                on:click={() => activePage.set("agregar-productos")}
+            >
+                Agregar mis productos
+            </button>
+        {/if}
+
         {#each infoDias as dia}
             <div class="dia">
                 <div class="subtitulo">Septiembre: {dia.dia}</div>
@@ -210,7 +228,13 @@
         font-size: large;
     }
 
-    .button {
+    button {
+        color: white;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .button-opciones {
         background-color: var(--color2);
     }
 
