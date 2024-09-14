@@ -339,6 +339,14 @@ export const data: Descuento[] = [
     },
     {
         "ciudad": "Santa Cruz",
+        "dia": "Sábado",
+        "proveedor": "Banco de Chile",
+        "tienda": "Noi Blend",
+        "descuento": 60,
+        "producto": "Tarjeta de crédito",
+    },
+    {
+        "ciudad": "Santa Cruz",
         "dia": "Martes",
         "proveedor": "Santander",
         "tienda": "Casa Albergue",

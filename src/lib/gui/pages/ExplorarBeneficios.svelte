@@ -4,6 +4,7 @@
     import { Descuento, Oferta, Producto } from "$lib/beneficios";
     import { data } from "$lib/data";
     import { z } from "zod";
+    import VistaInfoDia from "../VistaInfoDia.svelte";
 
     let infoDias: InfoDia[] = [];
 
@@ -360,20 +361,7 @@
 
     <div class="descuentos mt-4">
         {#each infoDias as dia}
-            <div class="dia">
-                <div class="subtitulo">Septiembre: {dia.dia}</div>
-
-                {#each dia.productos as producto}
-                    <div>{producto.proveedor} - {producto.nombre}</div>
-
-                    {#each producto.ofertas as oferta}
-                        <div class="oferta">
-                            <span>{oferta.tienda}</span>
-                            <span>{oferta.descuento} %</span>
-                        </div>
-                    {/each}
-                {/each}
-            </div>
+            <VistaInfoDia {dia} />
         {/each}
     </div>
 </section>
@@ -398,25 +386,5 @@
     select,
     .select {
         width: 100%;
-    }
-
-    .dia {
-        background-color: var(--color2);
-        border-radius: 0.5rem;
-        margin-bottom: 0.7rem;
-        padding: 0.7rem;
-        font-weight: bold;
-        color: white;
-    }
-
-    .subtitulo {
-        font-size: small;
-        color: rgb(173, 173, 173);
-    }
-
-    .oferta {
-        color: rgb(120, 204, 85);
-        display: flex;
-        justify-content: space-between;
     }
 </style>

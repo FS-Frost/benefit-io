@@ -39,3 +39,17 @@ export const Descuento = z.object({
 });
 
 export type Descuento = z.infer<typeof Descuento>;
+
+export const InfoProducto = Producto.extend({
+    ofertas: Oferta.array(),
+});
+
+export type InfoProducto = z.infer<typeof InfoProducto>;
+
+export const InfoDia = z.object({
+    dia: z.string(),
+    orden: z.number(),
+    productos: InfoProducto.array(),
+});
+
+export type InfoDia = z.infer<typeof InfoDia>;

@@ -22,3 +22,39 @@ export function titleCase(str: string): string {
 
     return words.join(' ');
 }
+
+export function quitarTildes(s: string): string {
+    type Reemplazo = {
+        original: string;
+        nuevo: string;
+    };
+
+    const reemplazos: Reemplazo[] = [
+        {
+            original: "á",
+            nuevo: "a",
+        },
+        {
+            original: "é",
+            nuevo: "e",
+        },
+        {
+            original: "í",
+            nuevo: "i",
+        },
+        {
+            original: "ó",
+            nuevo: "o",
+        },
+        {
+            original: "ú",
+            nuevo: "u",
+        },
+    ];
+
+    for (const reemplazo of reemplazos) {
+        s = s.replaceAll(reemplazo.original, reemplazo.nuevo);
+    }
+
+    return s;
+}

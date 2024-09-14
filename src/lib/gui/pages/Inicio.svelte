@@ -1,37 +1,18 @@
 <script lang="ts">
     import text, { capitalizeFirstLetter } from "$lib/text";
     import { onMount } from "svelte";
-    import VistaBeneficio from "../VistaBeneficio.svelte";
-    import {
-        Oferta,
-        Producto,
-        type Beneficio,
-        type Descuento,
-    } from "$lib/beneficios";
+    import { InfoDia, Oferta, Producto, type Descuento } from "$lib/beneficios";
     import { data } from "$lib/data";
     import { z } from "zod";
     import { KEY_PRODUCTOS } from "$lib/session";
     import { activePage } from "$lib/activePage";
+    import VistaInfoDia from "../VistaInfoDia.svelte";
 
     let infoDias: InfoDia[] = [];
 
     let fecha: string = "";
 
     let productosUsuario: Producto[] = [];
-
-    const InfoProducto = Producto.extend({
-        ofertas: Oferta.array(),
-    });
-
-    type InfoProducto = z.infer<typeof InfoProducto>;
-
-    const InfoDia = z.object({
-        dia: z.string(),
-        orden: z.number(),
-        productos: InfoProducto.array(),
-    });
-
-    type InfoDia = z.infer<typeof InfoDia>;
 
     function filtrarDescuentos(descuentos: Descuento[]): void {
         console.log("filtrarDescuentos");
@@ -192,20 +173,7 @@
         {/if}
 
         {#each infoDias as dia}
-            <div class="dia">
-                <div class="subtitulo">Septiembre: {dia.dia}</div>
-
-                {#each dia.productos as producto}
-                    <div>{producto.proveedor} - {producto.nombre}</div>
-
-                    {#each producto.ofertas as oferta}
-                        <div class="oferta">
-                            <span>{oferta.tienda}</span>
-                            <span>{oferta.descuento} %</span>
-                        </div>
-                    {/each}
-                {/each}
-            </div>
+            <VistaInfoDia {dia} />
         {/each}
     </div>
 </section>
@@ -236,25 +204,5 @@
 
     .button-opciones {
         background-color: var(--color2);
-    }
-
-    .dia {
-        background-color: var(--color2);
-        border-radius: 0.5rem;
-        margin-bottom: 0.7rem;
-        padding: 0.7rem;
-        font-weight: bold;
-        color: white;
-    }
-
-    .subtitulo {
-        font-size: small;
-        color: rgb(173, 173, 173);
-    }
-
-    .oferta {
-        color: rgb(120, 204, 85);
-        display: flex;
-        justify-content: space-between;
     }
 </style>
