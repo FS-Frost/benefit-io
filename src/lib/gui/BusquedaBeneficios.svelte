@@ -29,10 +29,6 @@
                 continue;
             }
 
-            // if (descuento.dia.toLowerCase() !== hoy) {
-            //     continue;
-            // }
-
             let indexDia = infoDias.findIndex((x) => x.dia === descuento.dia);
 
             if (indexDia < 0) {

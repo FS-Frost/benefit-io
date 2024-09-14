@@ -8,29 +8,6 @@
     let listasProductos: Producto[][] = [];
 
     onMount(() => {
-        // const productosUsuario: Producto[] = [
-        //     {
-        //         nombre: "Tarjeta de débito",
-        //         proveedor: "Banco de Chile",
-        //     },
-        //     {
-        //         nombre: "Tarjeta de crédito - Black",
-        //         proveedor: "Banco de Chile",
-        //     },
-        //     {
-        //         nombre: "Tarjeta de débito",
-        //         proveedor: "Banco Santander",
-        //     },
-        //     {
-        //         nombre: "Tarjeta de crédito Platinium",
-        //         proveedor: "Banco Santander",
-        //     },
-        //     {
-        //         nombre: "Tarjeta de crédito - BCI Plus",
-        //         proveedor: "Banco BCI",
-        //     },
-        // ];
-
         let productosUsuario: Producto[] = [];
 
         try {
