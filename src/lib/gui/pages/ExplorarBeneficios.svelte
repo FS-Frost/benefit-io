@@ -1,5 +1,5 @@
 <script lang="ts">
-    import text from "$lib/text";
+    import text, { capitalizeFirstLetter } from "$lib/text";
     import { onMount } from "svelte";
     import { Descuento, Oferta, Producto } from "$lib/beneficios";
     import { data } from "$lib/data";
@@ -57,6 +57,18 @@
             }
         }
 
+        proveedores.sort((a, b) => {
+            if (a > b) {
+                return 1;
+            }
+
+            if (a < b) {
+                return -1;
+            }
+
+            return 0;
+        });
+
         proveedores = [...proveedores];
     }
 
@@ -80,6 +92,18 @@
             }
         }
 
+        productos.sort((a, b) => {
+            if (a > b) {
+                return 1;
+            }
+
+            if (a < b) {
+                return -1;
+            }
+
+            return 0;
+        });
+
         productos = [...productos];
     }
 
@@ -90,6 +114,10 @@
         tiendas = [];
 
         for (const descuento of data) {
+            if (descuento.dia.split(" ").length > 1) {
+                continue;
+            }
+
             if (proveedorSeleccionado.length > 0) {
                 if (descuento.proveedor !== proveedorSeleccionado) {
                     continue;
@@ -106,6 +134,18 @@
                 dias.push(descuento.dia);
             }
         }
+
+        dias = [
+            "lunes",
+            "martes",
+            "miércoles",
+            "jueves",
+            "viernes",
+            "sábado",
+            "domingo",
+        ]
+            .filter((x) => dias.map((d) => d.toLowerCase()).includes(x))
+            .map((x) => capitalizeFirstLetter(x));
 
         dias = [...dias];
     }
@@ -137,6 +177,18 @@
                 tiendas.push(descuento.tienda);
             }
         }
+
+        tiendas.sort((a, b) => {
+            if (a > b) {
+                return 1;
+            }
+
+            if (a < b) {
+                return -1;
+            }
+
+            return 0;
+        });
 
         tiendas = [...tiendas];
     }
