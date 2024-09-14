@@ -23,6 +23,18 @@
             }
         }
 
+        proveedores.sort((a, b) => {
+            if (a > b) {
+                return 1;
+            }
+
+            if (a < b) {
+                return -1;
+            }
+
+            return 0;
+        });
+
         proveedores = [...proveedores];
     }
 
@@ -41,6 +53,18 @@
                 productos.push(descuento.producto);
             }
         }
+
+        productos.sort((a, b) => {
+            if (a > b) {
+                return 1;
+            }
+
+            if (a < b) {
+                return -1;
+            }
+
+            return 0;
+        });
 
         productos = [...productos];
     }
