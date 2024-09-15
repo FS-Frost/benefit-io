@@ -16,6 +16,18 @@
     function filtrarDescuentos(): void {
         infoDias = [];
 
+        const filtro = quitarTildes(busqueda.toLowerCase());
+        const esMatch = (input: string): boolean => {
+            const subfiltros = filtro.split(" ");
+            for (const subfiltro of subfiltros) {
+                if (!quitarTildes(input.toLowerCase()).includes(subfiltro)) {
+                    return false;
+                }
+            }
+
+            return true;
+        };
+
         const nombresDias: string[] = [
             "lunes",
             "martes",
@@ -28,6 +40,10 @@
 
         for (const descuento of descuentos) {
             if (descuento.dia.split(" ").length > 1) {
+                continue;
+            }
+
+            if (!(filtro.length > 0 && esMatch(JSON.stringify(descuento)))) {
                 continue;
             }
 
@@ -76,21 +92,6 @@
         console.log("infoDias", infoDias);
     }
 
-    let infoDiasFiltrados: InfoDia[] = [];
-
-    function buscarBeneficios(): void {
-        if (busqueda.length == 0) {
-            infoDiasFiltrados = [];
-            return;
-        }
-
-        const filtro = quitarTildes(busqueda.toLowerCase());
-
-        infoDiasFiltrados = infoDias.filter((x) =>
-            quitarTildes(JSON.stringify(x).toLowerCase()).includes(filtro),
-        );
-    }
-
     onMount(() => {
         hoy = capitalizeFirstLetter(
             new Date().toLocaleDateString("es-ES", {
@@ -111,16 +112,16 @@
             type="search"
             placeholder={hoy}
             bind:value={busqueda}
-            on:input={() => buscarBeneficios()}
+            on:input={() => filtrarDescuentos()}
         />
         <span class="icon is-small is-left">
             <i class="fas fa-magnifying-glass"></i>
         </span>
     </div>
 
-    {#if infoDiasFiltrados.length > 0}
+    {#if infoDias.length > 0}
         <div class="mt-3">
-            {#each infoDiasFiltrados as dia}
+            {#each infoDias as dia}
                 <VistaInfoDia {dia} />
             {/each}
         </div>

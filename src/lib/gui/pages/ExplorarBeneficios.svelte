@@ -1,6 +1,6 @@
 <script lang="ts">
     import text, { capitalizeFirstLetter } from "$lib/text";
-    import { onMount } from "svelte";
+    import { onMount, tick } from "svelte";
     import {
         Descuento,
         Oferta,
@@ -260,13 +260,31 @@
         console.log(infoDias);
     }
 
-    onMount(() => {
+    onMount(async () => {
         descuentos = obtenerDescuentos();
         filtrarDescuentos();
         filtrarProveedores();
         filtrarProductos();
         filtrarDias();
         filtrarTiendas();
+
+        await tick();
+
+        const hoy = capitalizeFirstLetter(
+            new Date().toLocaleDateString("es-ES", {
+                weekday: "long",
+            }),
+        ).toLowerCase();
+
+        const elementInfoDiaHoy = document.querySelector(
+            `#explorar-dia-${hoy}`,
+        );
+
+        console.log(`explorar-dia-${hoy}`);
+        if (elementInfoDiaHoy != null) {
+            console.log("scroll");
+            elementInfoDiaHoy.scrollIntoView();
+        }
     });
 </script>
 
@@ -377,6 +395,7 @@
 
     <div class="descuentos mt-4">
         {#each infoDias as dia}
+            <span id={`explorar-dia-${dia.dia.toLowerCase()}`}></span>
             <VistaInfoDia {dia} />
         {/each}
     </div>
