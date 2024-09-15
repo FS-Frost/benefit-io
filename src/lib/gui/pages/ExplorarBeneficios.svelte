@@ -1,10 +1,17 @@
 <script lang="ts">
     import text, { capitalizeFirstLetter } from "$lib/text";
     import { onMount } from "svelte";
-    import { Descuento, Oferta, Producto } from "$lib/beneficios";
-    import { data } from "$lib/data";
+    import {
+        Descuento,
+        Oferta,
+        ordenarInfoDias,
+        Producto,
+    } from "$lib/beneficios";
     import { z } from "zod";
     import VistaInfoDia from "../VistaInfoDia.svelte";
+    import { obtenerDescuentos } from "$lib/data";
+
+    let descuentos: Descuento[] = [];
 
     let infoDias: InfoDia[] = [];
 
@@ -51,24 +58,13 @@
         diaSeleccionado = "";
         tiendaSeleccionada = "";
 
-        for (const descuento of data) {
+        for (const descuento of descuentos) {
             if (!proveedores.includes(descuento.proveedor)) {
                 proveedores.push(descuento.proveedor);
             }
         }
 
-        proveedores.sort((a, b) => {
-            if (a > b) {
-                return 1;
-            }
-
-            if (a < b) {
-                return -1;
-            }
-
-            return 0;
-        });
-
+        proveedores.sort((a, b) => a.localeCompare(b));
         proveedores = [...proveedores];
     }
 
@@ -80,7 +76,7 @@
         dias = [];
         tiendas = [];
 
-        for (const descuento of data) {
+        for (const descuento of descuentos) {
             if (proveedorSeleccionado.length > 0) {
                 if (descuento.proveedor !== proveedorSeleccionado) {
                     continue;
@@ -92,18 +88,7 @@
             }
         }
 
-        productos.sort((a, b) => {
-            if (a > b) {
-                return 1;
-            }
-
-            if (a < b) {
-                return -1;
-            }
-
-            return 0;
-        });
-
+        productos.sort((a, b) => a.localeCompare(b));
         productos = [...productos];
     }
 
@@ -113,7 +98,7 @@
         dias = [];
         tiendas = [];
 
-        for (const descuento of data) {
+        for (const descuento of descuentos) {
             if (descuento.dia.split(" ").length > 1) {
                 continue;
             }
@@ -154,7 +139,7 @@
         console.log("filtrarTiendas");
         tiendas = [];
 
-        for (const descuento of data) {
+        for (const descuento of descuentos) {
             if (proveedorSeleccionado.length > 0) {
                 if (descuento.proveedor !== proveedorSeleccionado) {
                     continue;
@@ -178,22 +163,11 @@
             }
         }
 
-        tiendas.sort((a, b) => {
-            if (a > b) {
-                return 1;
-            }
-
-            if (a < b) {
-                return -1;
-            }
-
-            return 0;
-        });
-
+        tiendas.sort((a, b) => a.localeCompare(b));
         tiendas = [...tiendas];
     }
 
-    function filtrarDescuentos(descuentos: Descuento[]): void {
+    function filtrarDescuentos(): void {
         console.log("filtrarDescuentos");
         infoDias = [];
 
@@ -253,7 +227,9 @@
             }
 
             let indexProducto = infoDias[indexDia].productos.findIndex(
-                (x) => x.nombre === descuento.producto,
+                (x) =>
+                    x.proveedor === descuento.proveedor &&
+                    x.nombre === descuento.producto,
             );
 
             if (indexProducto < 0) {
@@ -278,27 +254,15 @@
             }
         }
 
-        proveedores = [...proveedores];
-
-        infoDias.sort((a, b) => {
-            if (a.orden > b.orden) {
-                return 1;
-            }
-
-            if (a.orden < b.orden) {
-                return -1;
-            }
-
-            return 0;
-        });
-
+        ordenarInfoDias(infoDias);
         infoDias = [...infoDias];
-
+        proveedores = [...proveedores];
         console.log(infoDias);
     }
 
     onMount(() => {
-        filtrarDescuentos(data);
+        descuentos = obtenerDescuentos();
+        filtrarDescuentos();
         filtrarProveedores();
         filtrarProductos();
         filtrarDias();
@@ -333,7 +297,7 @@
                         bind:value={proveedorSeleccionado}
                         on:change={() => {
                             filtrarProductos();
-                            filtrarDescuentos(data);
+                            filtrarDescuentos();
                         }}
                     >
                         <option value="">Ninguna</option>
@@ -354,7 +318,7 @@
                         bind:value={productoSeleccionado}
                         on:change={() => {
                             filtrarDias();
-                            filtrarDescuentos(data);
+                            filtrarDescuentos();
                         }}
                     >
                         <option value="">Ninguno</option>
@@ -375,7 +339,7 @@
                         bind:value={diaSeleccionado}
                         on:change={() => {
                             filtrarTiendas();
-                            filtrarDescuentos(data);
+                            filtrarDescuentos();
                         }}
                     >
                         <option value="">Ninguno</option>
@@ -395,7 +359,7 @@
                     <select
                         bind:value={tiendaSeleccionada}
                         on:change={() => {
-                            filtrarDescuentos(data);
+                            filtrarDescuentos();
                         }}
                     >
                         <option value="">Ninguno</option>

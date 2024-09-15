@@ -1,20 +1,23 @@
 <script lang="ts">
     import text, { capitalizeFirstLetter } from "$lib/text";
     import { onMount } from "svelte";
-    import { InfoDia, Oferta, Producto, type Descuento } from "$lib/beneficios";
-    import { data } from "$lib/data";
-    import { z } from "zod";
+    import {
+        InfoDia,
+        ordenarInfoDias,
+        Producto,
+        type Descuento,
+    } from "$lib/beneficios";
     import { KEY_PRODUCTOS } from "$lib/session";
     import { activePage } from "$lib/activePage";
     import VistaInfoDia from "../VistaInfoDia.svelte";
+    import { obtenerDescuentos } from "$lib/data";
 
+    let descuentos: Descuento[] = [];
     let infoDias: InfoDia[] = [];
-
     let fecha: string = "";
-
     let productosUsuario: Producto[] = [];
 
-    function filtrarDescuentos(descuentos: Descuento[]): void {
+    function filtrarDescuentos(): void {
         console.log("filtrarDescuentos");
         infoDias = [];
 
@@ -66,7 +69,9 @@
             }
 
             let indexProducto = infoDias[indexDia].productos.findIndex(
-                (x) => x.nombre === descuento.producto,
+                (x) =>
+                    x.proveedor === descuento.proveedor &&
+                    x.nombre === descuento.producto,
             );
 
             if (indexProducto < 0) {
@@ -91,24 +96,14 @@
             }
         }
 
-        infoDias.sort((a, b) => {
-            if (a.orden > b.orden) {
-                return 1;
-            }
-
-            if (a.orden < b.orden) {
-                return -1;
-            }
-
-            return 0;
-        });
-
+        ordenarInfoDias(infoDias);
         infoDias = [...infoDias];
-
         console.log(infoDias);
     }
 
     onMount(() => {
+        descuentos = obtenerDescuentos();
+
         fecha = capitalizeFirstLetter(
             new Date().toLocaleDateString("es-ES", {
                 year: "numeric",
@@ -131,7 +126,7 @@
 
         productosUsuario = [...productosUsuario];
 
-        filtrarDescuentos(data);
+        filtrarDescuentos();
     });
 </script>
 

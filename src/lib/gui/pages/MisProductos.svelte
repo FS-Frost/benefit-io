@@ -24,9 +24,26 @@
         listasProductos = [];
 
         for (const producto of productosUsuario) {
-            const lista = listasProductos.find((lista) =>
-                lista.some((p) => p.proveedor === producto.proveedor),
+            // Omitir productos no presentes en los descuentos
+            // if (
+            //     !descuentos.some(
+            //         (d) =>
+            //             d.producto === producto.nombre &&
+            //             d.proveedor === producto.proveedor,
+            //     )
+            // ) {
+            //     console.log(
+            //         "Producto de usuario no presente en los descuentos:",
+            //         producto,
+            //     );
+            //     continue;
+            // }
+
+            const lista: Producto[] | undefined = listasProductos.find(
+                (lista) =>
+                    lista.some((p) => p.proveedor === producto.proveedor),
             );
+
             if (lista == null) {
                 listasProductos.push([producto]);
                 continue;

@@ -1,7 +1,20 @@
 <script lang="ts">
     import type { InfoDia } from "$lib/beneficios";
+    import { onMount } from "svelte";
 
     export let dia: InfoDia;
+
+    onMount(() => {
+        dia.productos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+
+        for (const producto of dia.productos) {
+            producto.ofertas.sort(
+                (a, b) =>
+                    b.descuento - a.descuento ||
+                    a.tienda.localeCompare(b.tienda),
+            );
+        }
+    });
 </script>
 
 <div class="dia">

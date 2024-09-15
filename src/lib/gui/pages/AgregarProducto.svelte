@@ -1,10 +1,11 @@
 <script lang="ts">
     import text from "$lib/text";
     import { onMount } from "svelte";
-    import { data } from "$lib/data";
     import { KEY_PRODUCTOS } from "$lib/session";
-    import { Producto } from "$lib/beneficios";
+    import { Descuento, Producto } from "$lib/beneficios";
+    import { obtenerDescuentos } from "$lib/data";
 
+    let descuentos: Descuento[] = [];
     let proveedores: string[] = [];
     let productos: string[] = [];
     let proveedorSeleccionado: string = "";
@@ -17,24 +18,13 @@
         proveedorSeleccionado = "";
         productoSeleccionado = "";
 
-        for (const descuento of data) {
+        for (const descuento of descuentos) {
             if (!proveedores.includes(descuento.proveedor)) {
                 proveedores.push(descuento.proveedor);
             }
         }
 
-        proveedores.sort((a, b) => {
-            if (a > b) {
-                return 1;
-            }
-
-            if (a < b) {
-                return -1;
-            }
-
-            return 0;
-        });
-
+        proveedores.sort((a, b) => a.localeCompare(b));
         proveedores = [...proveedores];
     }
 
@@ -42,7 +32,7 @@
         console.log("filtrarProductos");
         productos = [];
 
-        for (const descuento of data) {
+        for (const descuento of descuentos) {
             if (proveedorSeleccionado.length > 0) {
                 if (descuento.proveedor !== proveedorSeleccionado) {
                     continue;
@@ -54,18 +44,7 @@
             }
         }
 
-        productos.sort((a, b) => {
-            if (a > b) {
-                return 1;
-            }
-
-            if (a < b) {
-                return -1;
-            }
-
-            return 0;
-        });
-
+        productos.sort((a, b) => a.localeCompare(b));
         productos = [...productos];
     }
 
@@ -102,6 +81,7 @@
     }
 
     onMount(() => {
+        descuentos = obtenerDescuentos();
         filtrarProveedores();
     });
 </script>
