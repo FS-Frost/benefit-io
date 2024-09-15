@@ -63,13 +63,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "Todos",
         "Local": "Casa Morera",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/casa-morera-2"
     },
     {
         "Año": "2024",
@@ -78,13 +78,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
-        "Local": "Do Suhi",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "Todos",
+        "Local": "Do Sushi",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/landing/beneficios-descuentos"
     },
     {
         "Año": "2024",
@@ -93,13 +93,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
-        "Local": "Huo Del Sol",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "Todos",
+        "Local": "Hijo Del Sol",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/hijo-del-sol-2"
     },
     {
         "Año": "2024",
@@ -108,13 +108,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "Todos",
         "Local": "La Burguesía",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/la-burguesia"
     },
     {
         "Año": "2024",
@@ -123,13 +123,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "Todos",
         "Local": "La Cocina De Javier",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/la-cocina-de-javier"
     },
     {
         "Año": "2024",
@@ -138,13 +138,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "Todos",
         "Local": "Local Burger",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/local-burger-2"
     },
     {
         "Año": "2024",
@@ -153,13 +153,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
-        "Local": "Pf Chang'S",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "Todos",
+        "Local": "Pf Chang's",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/pfchang"
     },
     {
         "Año": "2024",
@@ -168,13 +168,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "Todos",
         "Local": "Prima Bar",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/prima-bar-3"
     },
     {
         "Año": "2024",
@@ -183,13 +183,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "Todos",
         "Local": "Santa Brasa",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/santa-brasa-2"
     },
     {
         "Año": "2024",
@@ -198,13 +198,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "Todos",
         "Local": "Soul Of India",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/santa-brasa-2"
     },
     {
         "Año": "2024",
@@ -213,13 +213,13 @@ const filas = [
         "Día": "Viernes",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
-        "Local": "Sakura*",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "Todos",
+        "Local": "Sakura",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
-        "Observación": "* Solo en Rolls y Hosomaki",
-        "Info": ""
+        "Observación": "Solo en Rolls y Hosomaki",
+        "Info": "https://banco.santander.cl/beneficios/promociones/sakura-4"
     },
     {
         "Año": "2024",
@@ -228,13 +228,13 @@ const filas = [
         "Día": "Viernes",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Débito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
-        "Local": "Sakura*",
+        "Marca de Tarjeta": "Todas",
+        "Segmento": "-",
+        "Local": "Sakura",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
-        "Observación": "* Solo en Rolls y Hosomaki",
-        "Info": ""
+        "Observación": "Solo en Rolls y Hosomaki",
+        "Info": "https://banco.santander.cl/beneficios/promociones/sakura-4"
     },
     {
         "Año": "2024",
@@ -243,13 +243,13 @@ const filas = [
         "Día": "Lunes",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "VISA - AMEX",
+        "Marca de Tarjeta": "VISA, AMEX",
         "Segmento": "WorldMember Limited",
         "Local": "La Dicha",
         "Descuento": "40%",
         "Tope Descuento": "$100.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/landing/beneficios-descuentos"
     },
     {
         "Año": "2024",
@@ -258,13 +258,13 @@ const filas = [
         "Día": "Martes",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "VISA - AMEX",
+        "Marca de Tarjeta": "VISA, AMEX",
         "Segmento": "WorldMember Limited",
         "Local": "Tomata",
         "Descuento": "40%",
         "Tope Descuento": "$100.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/landing/beneficios-descuentos"
     },
     {
         "Año": "2024",
@@ -273,13 +273,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "VISA - AMEX",
+        "Marca de Tarjeta": "VISA, AMEX",
         "Segmento": "WorldMember Limited",
         "Local": "La Picantería",
         "Descuento": "40%",
         "Tope Descuento": "$100.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/landing/beneficios-descuentos"
     },
     {
         "Año": "2024",
@@ -288,13 +288,13 @@ const filas = [
         "Día": "Miércoles",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "VISA - AMEX",
+        "Marca de Tarjeta": "VISA, AMEX",
         "Segmento": "WorldMember Limited",
         "Local": "Piegari",
         "Descuento": "40%",
         "Tope Descuento": "$100.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/landing/beneficios-descuentos"
     },
     {
         "Año": "2024",
@@ -303,13 +303,13 @@ const filas = [
         "Día": "Jueves",
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
-        "Marca de Tarjeta": "VISA - AMEX",
+        "Marca de Tarjeta": "VISA, AMEX",
         "Segmento": "WorldMember Limited",
         "Local": "Pescados Capitales",
         "Descuento": "40%",
         "Tope Descuento": "$100.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/pescados-capitales-3"
     },
     {
         "Año": "2024",
@@ -319,12 +319,12 @@ const filas = [
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "AMEX",
-        "Segmento": "",
+        "Segmento": "Todos",
         "Local": "Carnal",
         "Descuento": "50%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/carnal-2"
     },
     {
         "Año": "2024",
@@ -334,12 +334,12 @@ const filas = [
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "AMEX",
-        "Segmento": "",
+        "Segmento": "Todos",
         "Local": "Jardín Mallinkrodt",
         "Descuento": "50%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/jardin-mallinkrodt"
     },
     {
         "Año": "2024",
@@ -349,12 +349,12 @@ const filas = [
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "AMEX",
-        "Segmento": "",
+        "Segmento": "Todos",
         "Local": "Bar 99",
         "Descuento": "50%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/99-restaurante"
     },
     {
         "Año": "2024",
@@ -364,12 +364,12 @@ const filas = [
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "AMEX",
-        "Segmento": "",
+        "Segmento": "Todos",
         "Local": "Yma",
         "Descuento": "50%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/personas/tarjetas/promociones/amexforfoodies"
     },
     {
         "Año": "2024",
@@ -379,12 +379,12 @@ const filas = [
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "AMEX",
-        "Segmento": "",
+        "Segmento": "Todos",
         "Local": "Otaki",
         "Descuento": "50%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/otaki-2"
     },
     {
         "Año": "2024",
@@ -394,12 +394,12 @@ const filas = [
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "AMEX",
-        "Segmento": "",
+        "Segmento": "Todos",
         "Local": "Sabor Y Aroma",
         "Descuento": "50%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/personas/tarjetas/promociones/amexforfoodies"
     },
     {
         "Año": "2024",
@@ -409,12 +409,12 @@ const filas = [
         "Institución Financiera": "Banco Santander",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "AMEX",
-        "Segmento": "",
-        "Local": "Gl",
+        "Segmento": "Todos",
+        "Local": "Gi Restaurant",
         "Descuento": "50%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.santander.cl/beneficios/promociones/gi"
     },
     {
         "Año": "2024",
@@ -424,12 +424,12 @@ const filas = [
         "Institución Financiera": "Banco BICE",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "VISA",
-        "Segmento": "",
+        "Segmento": "Todos",
         "Local": "Ambrosía",
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/ambrosia"
     },
     {
         "Año": "2024",
@@ -439,12 +439,12 @@ const filas = [
         "Institución Financiera": "Banco BICE",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "VISA",
-        "Segmento": "",
+        "Segmento": "Todos",
         "Local": "El Establo",
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/el-establo"
     },
     {
         "Año": "2024",
@@ -454,12 +454,12 @@ const filas = [
         "Institución Financiera": "Banco BICE",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "VISA",
-        "Segmento": "",
+        "Segmento": "Todos",
         "Local": "Olam",
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/olam"
     },
     {
         "Año": "2024",
@@ -469,12 +469,12 @@ const filas = [
         "Institución Financiera": "Banco BICE",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "VISA",
-        "Segmento": "",
+        "Segmento": "Todos",
         "Local": "Bar Alonso",
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/bar-alonso"
     },
     {
         "Año": "2024",
@@ -484,12 +484,12 @@ const filas = [
         "Institución Financiera": "Banco BICE",
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "VISA",
-        "Segmento": "",
+        "Segmento": "Todos",
         "Local": "Mia Bar",
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/mia-bar"
     },
     {
         "Año": "2024",
@@ -500,11 +500,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "VISA",
         "Segmento": "Signature",
-        "Local": "Zanzibar**",
+        "Local": "Zanzibar",
         "Descuento": "50%",
         "Tope Descuento": "$80.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/zanzibar"
     },
     {
         "Año": "2024",
@@ -515,11 +515,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "VISA",
         "Segmento": "Signature",
-        "Local": "Kechua**",
+        "Local": "Kechua",
         "Descuento": "50%",
         "Tope Descuento": "$80.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/kechua"
     },
     {
         "Año": "2024",
@@ -549,7 +549,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://personas.bancosecurity.cl/beneficios/gourmet/la-panera-rosa"
     },
     {
         "Año": "2024",
@@ -564,7 +564,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://personas.bancosecurity.cl/beneficios/gourmet/cuerovaca-0"
     },
     {
         "Año": "2024",
@@ -579,7 +579,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://personas.bancosecurity.cl/beneficios/gourmet/naoki"
     },
     {
         "Año": "2024",
@@ -594,7 +594,7 @@ const filas = [
         "Descuento": "50%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://personas.bancosecurity.cl/beneficios/gourmet/barrica-94"
     },
     {
         "Año": "2024",
@@ -609,7 +609,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://personas.bancosecurity.cl/beneficios/gourmet/nkiru-bar"
     },
     {
         "Año": "2024",
@@ -624,7 +624,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://personas.bancosecurity.cl/beneficios/gourmet/gi-restaurant"
     },
     {
         "Año": "2024",
@@ -639,7 +639,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://personas.bancosecurity.cl/beneficios/gourmet/sicily-pizzeria"
     },
     {
         "Año": "2024",
@@ -654,7 +654,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://itaubeneficios.cl/lunes-gourmet/ciros-bar/"
     },
     {
         "Año": "2024",
@@ -669,7 +669,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://itaubeneficios.cl/canje-gourmet/infiltrados-2/"
     },
     {
         "Año": "2024",
@@ -684,7 +684,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://itaubeneficios.cl/martes-gourmet/tanaka/"
     },
     {
         "Año": "2024",
@@ -699,7 +699,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://itaubeneficios.cl/miercoles-gourmet/fukai-2/"
     },
     {
         "Año": "2024",
@@ -714,7 +714,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://itaubeneficios.cl/jueves-gourmet/casaluz-restaurant/"
     },
     {
         "Año": "2024",
@@ -729,22 +729,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
-    },
-    {
-        "Año": "2024",
-        "Mes": "Septiembre",
-        "Ciudad": "Santiago",
-        "Día": "Viernes",
-        "Institución Financiera": "Banco Itaú",
-        "Producto": "T. Crédito",
-        "Marca de Tarjeta": "Mastercard",
-        "Segmento": "Black",
-        "Local": "Siete Negronis",
-        "Descuento": "40%",
-        "Tope Descuento": "$50.000",
-        "Observación": "",
-        "Info": ""
+        "Info": "https://itaubeneficios.cl/jueves-gourmet/hijo-del-sol-2/"
     },
     {
         "Año": "2024",
@@ -759,7 +744,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/ambrosia"
     },
     {
         "Año": "2024",
@@ -774,7 +759,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/el-establo"
     },
     {
         "Año": "2024",
@@ -789,7 +774,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/olam"
     },
     {
         "Año": "2024",
@@ -804,7 +789,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/bar-alonso"
     },
     {
         "Año": "2024",
@@ -819,7 +804,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/mia-bar"
     },
     {
         "Año": "2024",
@@ -830,11 +815,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "VISA",
         "Segmento": "Infinite",
-        "Local": "Zanzibar**",
+        "Local": "Zanzibar",
         "Descuento": "50%",
         "Tope Descuento": "$80.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/zanzibar"
     },
     {
         "Año": "2024",
@@ -845,86 +830,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "VISA",
         "Segmento": "Infinite",
-        "Local": "Kechua**",
+        "Local": "Kechua",
         "Descuento": "50%",
         "Tope Descuento": "$80.000",
         "Observación": "",
-        "Info": ""
-    },
-    {
-        "Año": "2024",
-        "Mes": "Septiembre",
-        "Ciudad": "Santiago",
-        "Día": "Lunes",
-        "Institución Financiera": "Banco BICE",
-        "Producto": "T. Débito",
-        "Marca de Tarjeta": "VISA",
-        "Segmento": "",
-        "Local": "Ambrosía",
-        "Descuento": "40%",
-        "Tope Descuento": "$50.000",
-        "Observación": "",
-        "Info": ""
-    },
-    {
-        "Año": "2024",
-        "Mes": "Septiembre",
-        "Ciudad": "Santiago",
-        "Día": "Martes",
-        "Institución Financiera": "Banco BICE",
-        "Producto": "T. Débito",
-        "Marca de Tarjeta": "VISA",
-        "Segmento": "",
-        "Local": "El Establo",
-        "Descuento": "40%",
-        "Tope Descuento": "$50.000",
-        "Observación": "",
-        "Info": ""
-    },
-    {
-        "Año": "2024",
-        "Mes": "Septiembre",
-        "Ciudad": "Santiago",
-        "Día": "Miércoles",
-        "Institución Financiera": "Banco BICE",
-        "Producto": "T. Débito",
-        "Marca de Tarjeta": "VISA",
-        "Segmento": "",
-        "Local": "Olam",
-        "Descuento": "40%",
-        "Tope Descuento": "$50.000",
-        "Observación": "",
-        "Info": ""
-    },
-    {
-        "Año": "2024",
-        "Mes": "Septiembre",
-        "Ciudad": "Santiago",
-        "Día": "Jueves",
-        "Institución Financiera": "Banco BICE",
-        "Producto": "T. Débito",
-        "Marca de Tarjeta": "VISA",
-        "Segmento": "",
-        "Local": "Bar Alonso",
-        "Descuento": "40%",
-        "Tope Descuento": "$50.000",
-        "Observación": "",
-        "Info": ""
-    },
-    {
-        "Año": "2024",
-        "Mes": "Septiembre",
-        "Ciudad": "Santiago",
-        "Día": "Viernes",
-        "Institución Financiera": "Banco BICE",
-        "Producto": "T. Débito",
-        "Marca de Tarjeta": "VISA",
-        "Segmento": "",
-        "Local": "Mia Bar",
-        "Descuento": "40%",
-        "Tope Descuento": "$50.000",
-        "Observación": "",
-        "Info": ""
+        "Info": "https://banco.bice.cl/personas/beneficios/kechua"
     },
     {
         "Año": "2024",
@@ -935,11 +845,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Bar De Rio",
+        "Local": "Bar De Rio (Borde Río)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo válido en Borde Río",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -950,11 +860,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Bar Santiago",
+        "Local": "Bar Santiago (Borde Río)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo válido en Borde Río",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -965,11 +875,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Bistró & Café",
+        "Local": "Bistró & Café (Borde Río)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo válido en Borde Río",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -980,11 +890,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Kechua",
+        "Local": "Kechua (Borde Río)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo válido en Borde Río",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -995,11 +905,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Krossbar",
+        "Local": "Krossbar (Borde Río)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo válido en Borde Río",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1010,11 +920,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "La Tabla",
+        "Local": "La Tabla (Borde Río)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo válido en Borde Río",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1025,11 +935,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Pulmay",
+        "Local": "Pulmay (Borde Río)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo válido en Borde Río",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1040,11 +950,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Zanzibar",
+        "Local": "Zanzibar (Borde Río)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo válido en Borde Río",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1059,7 +969,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/berlin-doner-kebab"
     },
     {
         "Año": "2024",
@@ -1070,11 +980,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Nelí",
+        "Local": "Nelí (Parque Arauco)",
         "Descuento": "40%",
         "Tope Descuento": "",
-        "Observación": "",
-        "Info": ""
+        "Observación": "Parque Arauco",
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/miercoles-gourmet-cmr"
     },
     {
         "Año": "2024",
@@ -1089,22 +999,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
-    },
-    {
-        "Año": "2024",
-        "Mes": "Septiembre",
-        "Ciudad": "Santiago",
-        "Día": "Jueves",
-        "Institución Financiera": "Banco Falabella",
-        "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
-        "Local": "Ciudad Vieja",
-        "Descuento": "40%",
-        "Tope Descuento": "",
-        "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/miercoles-gourmet-cmr"
     },
     {
         "Año": "2024",
@@ -1119,7 +1014,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/kobosushi"
     },
     {
         "Año": "2024",
@@ -1134,7 +1029,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/danes"
     },
     {
         "Año": "2024",
@@ -1149,7 +1044,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/la-maestranza"
     },
     {
         "Año": "2024",
@@ -1164,7 +1059,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/vapiano"
     },
     {
         "Año": "2024",
@@ -1175,11 +1070,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "El Japonés",
+        "Local": "El Japonés (Open Kennedy)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo en Open Kennedy desde las 19:30 hrs",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1190,11 +1085,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "La Piazza",
+        "Local": "La Piazza (Open Kennedy)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo en Open Kennedy desde las 19:30 hrs",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1205,11 +1100,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Siete Cortes",
+        "Local": "Siete Cortes (Open Kennedy)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo en Open Kennedy desde las 19:30 hrs",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1220,11 +1115,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Jalisco",
+        "Local": "Jalisco (Open Kennedy)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo en Open Kennedy desde las 19:30 hrs",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1235,11 +1130,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "La Sanguchera del Barrio",
+        "Local": "La Sanguchera del Barrio (Open Kennedy)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo en Open Kennedy desde las 19:30 hrs",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1250,11 +1145,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "El Bodegón",
+        "Local": "El Bodegón (Open Kennedy)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo en Open Kennedy desde las 19:30 hrs",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1265,11 +1160,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Mesón del Marinero",
+        "Local": "Mesón del Marinero (Open Kennedy)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo en Open Kennedy desde las 19:30 hrs",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1280,11 +1175,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Cantina Isidora",
+        "Local": "Cantina Isidora (Isidora Goy.)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo en Isidora Goyenechea",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/isidora-3000-jueves-viernes"
     },
     {
         "Año": "2024",
@@ -1295,11 +1190,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Muu Steak",
+        "Local": "Muu Steak (Isidora Goy.)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo en Isidora Goyenechea",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/isidora-3000-jueves-viernes"
     },
     {
         "Año": "2024",
@@ -1310,11 +1205,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Tanta",
+        "Local": "Tanta (Isidora Goy.)",
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "Sólo en Isidora Goyenechea",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/isidora-3000-jueves-viernes"
     },
     {
         "Año": "2024",
@@ -1344,7 +1239,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/40-naoki"
     },
     {
         "Año": "2024",
@@ -1359,7 +1254,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/40-ceiba"
     },
     {
         "Año": "2024",
@@ -1374,7 +1269,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/la-dicha"
     },
     {
         "Año": "2024",
@@ -1389,7 +1284,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/40-la-picanteria"
     },
     {
         "Año": "2024",
@@ -1404,7 +1299,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/ciros"
     },
     {
         "Año": "2024",
@@ -1419,7 +1314,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1434,7 +1329,7 @@ const filas = [
         "Descuento": "50%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1449,7 +1344,7 @@ const filas = [
         "Descuento": "50%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1464,7 +1359,7 @@ const filas = [
         "Descuento": "50%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1479,7 +1374,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1494,7 +1389,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1509,7 +1404,7 @@ const filas = [
         "Descuento": "50%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1524,7 +1419,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1539,7 +1434,7 @@ const filas = [
         "Descuento": "50%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1554,7 +1449,7 @@ const filas = [
         "Descuento": "50%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1569,7 +1464,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1584,7 +1479,7 @@ const filas = [
         "Descuento": "50%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1599,7 +1494,7 @@ const filas = [
         "Descuento": "50%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1614,7 +1509,7 @@ const filas = [
         "Descuento": "50%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://beneficios.scotiabank.cl/scclubfront/categoria/platosycomida/rutagourmet?_ga=2.263194315.6364236.1726322291-640661591.1726322291&_gl=1*iuxbe*_gcl_au*MTkzNTY2ODcuMTcyNjMyMjI5MQ..*_ga*NjQwNjYxNTkxLjE3MjYzMjIyOTE.*_ga_6EDD061F8G*MTcyNjM0NDM5Mi4zLjAuMTcyNjM0NDM5Mi4wLjAuMA.."
     },
     {
         "Año": "2024",
@@ -1625,11 +1520,11 @@ const filas = [
         "Producto": "T. Débito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Bar De Rio",
+        "Local": "Bar De Rio (Borde Río)",
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1640,11 +1535,11 @@ const filas = [
         "Producto": "T. Débito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Bar Santiago",
+        "Local": "Bar Santiago (Borde Río)",
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1655,11 +1550,11 @@ const filas = [
         "Producto": "T. Débito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Bistró & Café",
+        "Local": "Bistró & Café (Borde Río)",
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1670,11 +1565,11 @@ const filas = [
         "Producto": "T. Débito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Kechua",
+        "Local": "Kechua (Borde Río)",
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1685,11 +1580,11 @@ const filas = [
         "Producto": "T. Débito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Krossbar",
+        "Local": "Krossbar (Borde Río)",
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1700,11 +1595,11 @@ const filas = [
         "Producto": "T. Débito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "La Tabla",
+        "Local": "La Tabla (Borde Río)",
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1715,11 +1610,11 @@ const filas = [
         "Producto": "T. Débito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Pulmay",
+        "Local": "Pulmay (Borde Río)",
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1730,11 +1625,11 @@ const filas = [
         "Producto": "T. Débito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Zanzibar",
+        "Local": "Zanzibar (Borde Río)",
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/martes-de-borderio"
     },
     {
         "Año": "2024",
@@ -1749,7 +1644,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/berlin-doner-kebab"
     },
     {
         "Año": "2024",
@@ -1760,11 +1655,11 @@ const filas = [
         "Producto": "T. Débito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Nelí",
+        "Local": "Nelí (Parque Arauco)",
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/miercoles-gourmet-cmr"
     },
     {
         "Año": "2024",
@@ -1779,22 +1674,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
-    },
-    {
-        "Año": "2024",
-        "Mes": "Septiembre",
-        "Ciudad": "Santiago",
-        "Día": "Jueves",
-        "Institución Financiera": "Banco Falabella",
-        "Producto": "T. Débito",
-        "Marca de Tarjeta": "",
-        "Segmento": "",
-        "Local": "Ciudad Vieja",
-        "Descuento": "30%",
-        "Tope Descuento": "",
-        "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/miercoles-gourmet-cmr"
     },
     {
         "Año": "2024",
@@ -1809,7 +1689,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/kobosushi"
     },
     {
         "Año": "2024",
@@ -1824,7 +1704,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/danes"
     },
     {
         "Año": "2024",
@@ -1839,7 +1719,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/la-maestranza"
     },
     {
         "Año": "2024",
@@ -1854,7 +1734,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/vapiano"
     },
     {
         "Año": "2024",
@@ -1869,7 +1749,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1884,7 +1764,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1899,7 +1779,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1914,7 +1794,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1929,7 +1809,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1944,7 +1824,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1959,7 +1839,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/Santiago-open-gourmet"
     },
     {
         "Año": "2024",
@@ -1974,7 +1854,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/isidora-3000-jueves-viernes"
     },
     {
         "Año": "2024",
@@ -1989,7 +1869,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/isidora-3000-jueves-viernes"
     },
     {
         "Año": "2024",
@@ -2004,7 +1884,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/isidora-3000-jueves-viernes"
     },
     {
         "Año": "2024",
@@ -2019,7 +1899,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancofalabella.cl/descuentos/detalle/40-de-dcto-en-restaurantes-mallplaza"
     },
     {
         "Año": "2024",
@@ -2034,7 +1914,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.appcopec.cl/promo-y-beneficios/streat-burger/"
     },
     {
         "Año": "2024",
@@ -2049,7 +1929,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "Desde 19 hrs",
-        "Info": ""
+        "Info": "https://www.tarjetacencosud.cl/publico/beneficios/landing/cenco-malls"
     },
     {
         "Año": "2024",
@@ -2064,7 +1944,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "Desde 19 hrs",
-        "Info": ""
+        "Info": "https://www.tarjetacencosud.cl/publico/beneficios/landing/cenco-malls"
     },
     {
         "Año": "2024",
@@ -2079,7 +1959,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/chilis-descuento"
     },
     {
         "Año": "2024",
@@ -2094,7 +1974,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/pf-changs-descuento"
     },
     {
         "Año": "2024",
@@ -2109,7 +1989,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/descuento-la-cocina-de-javier"
     },
     {
         "Año": "2024",
@@ -2124,7 +2004,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/descuento-galpon-alonso-2"
     },
     {
         "Año": "2024",
@@ -2139,7 +2019,7 @@ const filas = [
         "Descuento": "50%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/latin-grill"
     },
     {
         "Año": "2024",
@@ -2150,11 +2030,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Majka",
+        "Local": "Majka Bistró",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/descuento-majka-bistro"
     },
     {
         "Año": "2024",
@@ -2169,7 +2049,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/descuento-malva-loca"
     },
     {
         "Año": "2024",
@@ -2184,7 +2064,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/descuento-pomeriggio"
     },
     {
         "Año": "2024",
@@ -2199,7 +2079,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/descuento-puerto-del-alto"
     },
     {
         "Año": "2024",
@@ -2210,11 +2090,11 @@ const filas = [
         "Producto": "T. Crédito",
         "Marca de Tarjeta": "",
         "Segmento": "",
-        "Local": "Tomata",
+        "Local": "Tomata Pizza",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/descuento-tomata-pizza"
     },
     {
         "Año": "2024",
@@ -2229,7 +2109,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/40percent-en-cuerovaca-los-viernes-de-vamos-2"
     },
     {
         "Año": "2024",
@@ -2244,7 +2124,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/descuento-kantu"
     },
     {
         "Año": "2024",
@@ -2259,7 +2139,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/descuento-la-biferia-restaurant"
     },
     {
         "Año": "2024",
@@ -2274,7 +2154,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/40percent-en-la-picanteria-los-viernes-de-vamos-2"
     },
     {
         "Año": "2024",
@@ -2289,7 +2169,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/40percent-de-dcto-en-pescados-capitales-los-viernes"
     },
     {
         "Año": "2024",
@@ -2304,22 +2184,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
-    },
-    {
-        "Año": "2024",
-        "Mes": "Septiembre",
-        "Ciudad": "Santiago",
-        "Día": "Viernes",
-        "Institución Financiera": "Banco BCI",
-        "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "BCI Plus Cashback",
-        "Local": "Cocina De Javier",
-        "Descuento": "50%",
-        "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
+        "Info": "https://www.bci.cl/beneficios/beneficios/40percent-en-verde-sazon-los-viernes-de-vamos-2"
     },
     {
         "Año": "2024",
@@ -2333,8 +2198,8 @@ const filas = [
         "Local": "Pizza Nostra",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
+        "Observación": "Activar Cashback Bci",
+        "Info": "https://www.bci.cl/beneficios/beneficios/la-pizza-nostra"
     },
     {
         "Año": "2024",
@@ -2348,8 +2213,8 @@ const filas = [
         "Local": "Cocina De Kaleta",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
+        "Observación": "Activar Cashback Bci",
+        "Info": "https://www.bci.cl/beneficios/beneficios/cashback-en-cocina-de-kaleta"
     },
     {
         "Año": "2024",
@@ -2363,23 +2228,8 @@ const filas = [
         "Local": "La Perla Del Pacífico",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
-    },
-    {
-        "Año": "2024",
-        "Mes": "Septiembre",
-        "Ciudad": "Santiago",
-        "Día": "Lunes, Miércoles, Viernes",
-        "Institución Financiera": "Banco BCI",
-        "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "BCI Plus Cashback",
-        "Local": "Puerto Del Alto",
-        "Descuento": "40%",
-        "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
+        "Observación": "Activar Cashback Bci",
+        "Info": "https://www.bci.cl/beneficios/beneficios/cashback-en-la-perla-del-pacifico"
     },
     {
         "Año": "2024",
@@ -2393,8 +2243,8 @@ const filas = [
         "Local": "Trattoria Rita",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
+        "Observación": "Activar Cashback Bci",
+        "Info": "https://www.bci.cl/beneficios/beneficios/cashback-en-trattoria-rita"
     },
     {
         "Año": "2024",
@@ -2408,8 +2258,8 @@ const filas = [
         "Local": "Kento Sushi",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
+        "Observación": "Activar Cashback Bci",
+        "Info": "https://www.bci.cl/beneficios/beneficios/cashback-en-kento-sushi"
     },
     {
         "Año": "2024",
@@ -2423,8 +2273,8 @@ const filas = [
         "Local": "Expendio Montt",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
+        "Observación": "Activar Cashback Bci",
+        "Info": "https://www.bci.cl/beneficios/beneficios/cashback-en-bar-expendio"
     },
     {
         "Año": "2024",
@@ -2438,8 +2288,8 @@ const filas = [
         "Local": "Porfirio",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
+        "Observación": "Activar Cashback Bci",
+        "Info": "https://www.bci.cl/beneficios/beneficios/cashback-en-bar-porfirio"
     },
     {
         "Año": "2024",
@@ -2453,8 +2303,8 @@ const filas = [
         "Local": "Caramagnola",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
+        "Observación": "Activar Cashback Bci",
+        "Info": "https://www.bci.cl/beneficios/beneficios/caramagnola-cashback"
     },
     {
         "Año": "2024",
@@ -2468,23 +2318,8 @@ const filas = [
         "Local": "Baza Los Trapenses",
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
-    },
-    {
-        "Año": "2024",
-        "Mes": "Septiembre",
-        "Ciudad": "Santiago",
-        "Día": "Viernes, Sábado, Domingo",
-        "Institución Financiera": "Banco BCI",
-        "Producto": "T. Crédito",
-        "Marca de Tarjeta": "",
-        "Segmento": "BCI Plus Cashback",
-        "Local": "Puerto Del Alto",
-        "Descuento": "40%",
-        "Tope Descuento": "$40.000",
-        "Observación": "",
-        "Info": ""
+        "Observación": "Activar Cashback Bci",
+        "Info": "https://www.bci.cl/beneficios/beneficios/cashback-baza-vivo-los-trapenses"
     },
     {
         "Año": "2024",
@@ -2499,7 +2334,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://portales.bancochile.cl/personas/beneficios/sabores/40-de-descuento-visa/detalles/al-pesto-visa"
     },
     {
         "Año": "2024",
@@ -2514,7 +2349,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://portales.bancochile.cl/personas/beneficios/sabores/40-de-descuento-visa/detalles/dona-paula"
     },
     {
         "Año": "2024",
@@ -2529,7 +2364,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://portales.bancochile.cl/personas/beneficios/sabores/restaurantes-y-bares/detalles/la-cocina-de-javier"
     },
     {
         "Año": "2024",
@@ -2544,7 +2379,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://portales.bancochile.cl/personas/beneficios/sabores/40-de-descuento-visa/detalles/perla-del-pacifico-visa"
     },
     {
         "Año": "2024",
@@ -2559,7 +2394,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://portales.bancochile.cl/personas/beneficios/sabores/40-de-descuento-visa/detalles/quercus-visa"
     },
     {
         "Año": "2024",
@@ -2574,7 +2409,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://portales.bancochile.cl/personas/beneficios/sabores/40-de-descuento-visa/detalles/capogrossi-visa"
     },
     {
         "Año": "2024",
@@ -2589,7 +2424,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://portales.bancochile.cl/personas/beneficios/sabores/40-de-descuento-visa/detalles/brasas-arriero-40-dcto"
     },
     {
         "Año": "2024",
@@ -2604,7 +2439,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://portales.bancochile.cl/personas/beneficios/sabores/40-de-descuento-visa/detalles/bar-medanoso-visa"
     },
     {
         "Año": "2024",
@@ -2619,7 +2454,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://portales.bancochile.cl/personas/beneficios/sabores/40-de-descuento-visa/detalles/fechoria-restaurante-visa"
     },
     {
         "Año": "2024",
@@ -2634,7 +2469,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$50.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://portales.bancochile.cl/personas/beneficios/sabores/40-de-descuento-visa/detalles/calma-de-rita-40-dcto"
     },
     {
         "Año": "2024",
@@ -2649,7 +2484,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancoripley.cl/beneficio?name=CantinaMontt&id=restofans_63d57ffe-19c8-4804-b8b2-708487987b75&fromSP=true"
     },
     {
         "Año": "2024",
@@ -2664,7 +2499,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancoripley.cl/beneficio?name=NkiruBar&id=restofans_ccf73ad1-6842-4214-8974-688d281b1737&fromSP=true"
     },
     {
         "Año": "2024",
@@ -2679,7 +2514,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancoripley.cl/beneficio?name=Fukai&id=restofans_a17569de-c15a-4780-9461-4139a9a9204b&fromSP=true"
     },
     {
         "Año": "2024",
@@ -2694,7 +2529,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancoripley.cl/beneficio?name=GalponItalia&id=restofans_d802e15a-188a-4fee-a1bc-697330b97da7&fromSP=true"
     },
     {
         "Año": "2024",
@@ -2709,7 +2544,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancoripley.cl/beneficio?name=CastilloHamburgo&id=restofans_e9018e20-e8d1-4321-bcaa-019b48908080&fromSP=true"
     },
     {
         "Año": "2024",
@@ -2724,7 +2559,7 @@ const filas = [
         "Descuento": "40%",
         "Tope Descuento": "$40.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.bancoripley.cl/beneficio?name=Majestic&id=restofans_85774721-ee8e-4ccc-b548-1054b0d8d2cd&fromSP=true"
     },
     {
         "Año": "2024",
@@ -2739,7 +2574,7 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "$100.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.tenpo.cl/beneficios/vicenzo-restaurant"
     },
     {
         "Año": "2024",
@@ -2754,6 +2589,6 @@ const filas = [
         "Descuento": "30%",
         "Tope Descuento": "$100.000",
         "Observación": "",
-        "Info": ""
+        "Info": "https://www.tenpo.cl/beneficios/barbazul"
     }
 ];
