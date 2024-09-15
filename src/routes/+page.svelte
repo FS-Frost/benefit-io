@@ -16,7 +16,9 @@
 
     onMount(async () => {
         const response = await fetch("build-info.json");
-        if (response.headers.get("content-type") !== "application/json") {
+        if (
+            !response.headers.get("content-type")?.includes("application/json")
+        ) {
             console.log(
                 "fetch build info",
                 response.status,
