@@ -1,9 +1,15 @@
 <script lang="ts">
-    import { Descuento, InfoDia, ordenarInfoDias } from "$lib/beneficios";
+    import {
+        Descuento,
+        InfoDia,
+        ordenarInfoDias,
+        Producto,
+    } from "$lib/beneficios";
     import { capitalizeFirstLetter, quitarTildes } from "$lib/text";
     import { onMount } from "svelte";
     import VistaInfoDia from "./VistaInfoDia.svelte";
     import { obtenerDescuentos } from "$lib/data";
+    import { KEY_PRODUCTOS } from "$lib/session";
 
     let descuentos: Descuento[] = [];
 
@@ -12,6 +18,8 @@
     let infoDias: InfoDia[] = [];
 
     let hoy: string = "";
+
+    let placeholderBusqueda: string = "";
 
     function filtrarDescuentos(): void {
         infoDias = [];
@@ -101,6 +109,41 @@
 
         descuentos = obtenerDescuentos();
 
+        let productosUsuario: Producto[] = [];
+
+        try {
+            const rawProductosUsuario =
+                localStorage.getItem(KEY_PRODUCTOS) ?? "[]";
+
+            productosUsuario = Producto.array().parse(
+                JSON.parse(rawProductosUsuario),
+            );
+        } catch (error) {
+            console.error("error al obtener productos guardados", error);
+        }
+
+        placeholderBusqueda = `${hoy}`;
+
+        for (const descuento of descuentos) {
+            if (descuento.dia.toLowerCase() !== hoy) {
+                continue;
+            }
+
+            if (
+                productosUsuario.length > 0 &&
+                !productosUsuario.some(
+                    (x) =>
+                        x.proveedor === descuento.proveedor &&
+                        x.nombre === descuento.producto,
+                )
+            ) {
+                continue;
+            }
+
+            placeholderBusqueda = `${hoy} ${descuento.tienda.toLowerCase()}`;
+            break;
+        }
+
         filtrarDescuentos();
     });
 </script>
@@ -110,7 +153,7 @@
         <input
             class="input"
             type="search"
-            placeholder={hoy}
+            placeholder={placeholderBusqueda}
             bind:value={busqueda}
             on:input={() => filtrarDescuentos()}
         />
