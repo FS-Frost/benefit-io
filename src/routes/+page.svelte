@@ -5,12 +5,7 @@
     import { onMount } from "svelte";
     import Router from "./Router.svelte";
     import { z } from "zod";
-    import {
-        iniciarSesionGoogle,
-        obtenerUsuario,
-        storeUsuario,
-        Usuario,
-    } from "$lib/auth";
+    import { iniciarSesionGoogle, obtenerUsuario, storeUsuario, Usuario } from "$lib/auth";
     import NavBar from "$lib/gui/nav/NavBar.svelte";
 
     const BuildInfo = z.object({
@@ -25,14 +20,8 @@
 
     async function obtenerVersion(): Promise<void> {
         const response = await fetch("build-info.json");
-        if (
-            !response.headers.get("content-type")?.includes("application/json")
-        ) {
-            console.log(
-                "fetch build info",
-                response.status,
-                await response.text(),
-            );
+        if (!response.headers.get("content-type")?.includes("application/json")) {
+            console.log("fetch build info", response.status, await response.text());
             return;
         }
 
@@ -75,12 +64,7 @@
     {#if usuario != null}
         <p>¡Hola, {usuario.email}!</p>
     {:else}
-        <button
-            class="button is-link is-fullwidth mt-2"
-            on:click={() => iniciarSesionGoogle()}
-        >
-            Iniciar sesión
-        </button>
+        <button class="button is-link is-fullwidth mt-2" on:click={() => iniciarSesionGoogle()}> Iniciar sesión </button>
     {/if}
 
     <hr />
