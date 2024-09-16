@@ -9,6 +9,7 @@ export default {
     acercaDe: `Acerca de ${appName}`,
     iniciarSesion: `Iniciar sesión`,
     cerrarSesion: `Cerrar sesión`,
+    sinProductos: "No tienes productos registrados.",
 };
 
 export function capitalizeFirstLetter(string: string): string {

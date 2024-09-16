@@ -1,5 +1,22 @@
-- Agregar descuentos desde planilla.
-- Búsqueda global.
-- Sugerencia de búsqueda global con una tienda del día de hoy.
-- Al explorar beneficios, autoscroll al día de hoy.
-- Mostrar fecha de última actualización.
+(x) Agregar descuentos desde planilla.
+(x) Búsqueda global.
+(x) Sugerencia de búsqueda global con una tienda del día de hoy.
+(x) Al explorar beneficios, autoscroll al día de hoy.
+(x) Mostrar fecha de última actualización.
+(-) Mostrar opciones inferiores en una sola fila.
+(-) Cargar tarjetas desde JSON.
+    Banco Santander
+    Tarjeta de crédito [Visa|Amex]
+    Worldmember Limited LATAM Pass
+
+    Banco Santander	Tarjeta de Crédito	Visa	Worldmember Limited LATAM Pass
+    Banco Santander	Tarjeta de Crédito	Amex	Worldmember Limited LATAM Pass
+    Banco Santander	Tarjeta de Crédito	Visa, Amex	Platinum LATAM Pass
+( ) Cargar descuentos desde JSON.
+    - Si la categoría está vacía, aplica para todas las tarjetas de ese tipo.
+( ) Mostrar detalles del descuento al presionarlo en cualquier lista.
+    NOMBRE LOCAL
+    DESCUENTO
+    TOPE
+    INFORMACIÓN
+    ENLACE

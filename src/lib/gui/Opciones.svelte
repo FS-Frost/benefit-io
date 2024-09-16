@@ -43,22 +43,33 @@
 
 <div class="opciones">
     {#each opciones as opcion}
-        <a
-            class={`opcion ${currentPage === opcion.page ? "active" : ""}`}
-            on:click={() => activePage.set(opcion.page)}
-            href={`?pagina=${opcion.page}`}
-        >
-            <i class={`fa-solid ${opcion.icon}`}></i>
-            <span>{opcion.text}</span>
-        </a>
+        <div class="container-opcion">
+            <a
+                class={`opcion ${currentPage === opcion.page ? "active" : ""}`}
+                on:click={() => activePage.set(opcion.page)}
+                href={`?pagina=${opcion.page}`}
+            >
+                <i class={`fa-solid ${opcion.icon}`}></i>
+            </a>
+
+            <p class="texto">{opcion.text}</p>
+        </div>
     {/each}
 </div>
 
 <style>
     .opciones {
-        display: flex;
-        justify-content: space-between;
-        flex-flow: wrap;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 1rem;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .container-opcion {
+        border: 2px solid rgba(0, 0, 0, 0);
+        width: 4rem;
+        height: 4rem;
     }
 
     .opcion {
@@ -67,13 +78,10 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
-        padding: 0.5rem;
         color: white;
-        font-weight: 500;
-        width: 7rem;
-        height: 7rem;
-        font-size: small;
-        margin: 0.5rem;
+        font-size: x-small;
+        width: 100%;
+        height: 100%;
     }
 
     .opcion:hover {
@@ -82,12 +90,14 @@
 
     .opcion i {
         text-align: center;
-        font-size: xx-large;
+        font-size: x-large;
     }
 
-    .opcion span {
+    .texto {
         margin-top: 0.3rem;
+        font-size: x-small;
         text-align: center;
+        font-weight: bold;
     }
 
     .opcion.active {
