@@ -3,7 +3,15 @@
     import NavItem from "./NavItem.svelte";
     import { BuildInfo, getBuildInfo } from "$lib/buildInfo";
     import text from "$lib/text";
+    import {
+        cerrarSesion,
+        iniciarSesionGoogle,
+        storeUsuario,
+        Usuario,
+    } from "$lib/auth";
+    import Swal from "sweetalert2";
 
+    let usuario: Usuario | null = null;
     let buildInfo: BuildInfo = BuildInfo.parse({});
     let navMenu: HTMLElement;
     let navToggle: HTMLElement;
@@ -18,8 +26,22 @@
         }
     }
 
+    function manejarCerrarSesion(): void {
+        Swal.fire({
+            title: "Cerrando sesión",
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false,
+            didOpen: () => Swal.showLoading(),
+        });
+
+        cerrarSesion();
+        location.reload();
+    }
+
     onMount(async () => {
         buildInfo = await getBuildInfo();
+        storeUsuario.subscribe((valor) => (usuario = valor));
     });
 </script>
 
@@ -50,9 +72,30 @@
 
             <NavItem text={text.paginaExplorar} page="explorar-beneficios" />
 
-            <NavItem text={text.paginaAgregarProductos} page="agregar-productos" />
+            <NavItem
+                text={text.paginaAgregarProductos}
+                page="agregar-productos"
+            />
 
-            <NavItem text={text.acercaDe} page="acercaDe" />
+            <!-- <NavItem text={text.acercaDe} page="acercaDe" /> -->
+
+            {#if usuario == null}
+                <a
+                    class="navbar-item"
+                    href="#_"
+                    on:click={() => iniciarSesionGoogle()}
+                >
+                    {text.iniciarSesion}
+                </a>
+            {:else}
+                <a
+                    class="navbar-item"
+                    href="#_"
+                    on:click={() => manejarCerrarSesion()}
+                >
+                    {text.cerrarSesion}
+                </a>
+            {/if}
         </div>
     </div>
 </nav>

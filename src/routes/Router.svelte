@@ -6,6 +6,7 @@
     import MisProductos from "$lib/gui/pages/MisProductos.svelte";
     import AgregarProducto from "$lib/gui/pages/AgregarProducto.svelte";
     import ExplorarBeneficios from "$lib/gui/pages/ExplorarBeneficios.svelte";
+    import IniciarSesion from "$lib/gui/pages/IniciarSesion.svelte";
 
     let page: ActivePage;
 
@@ -29,6 +30,8 @@
     <Inicio />
 {:else if page == "mis-productos"}
     <MisProductos />
+{:else if page == "iniciar-sesion"}
+    <IniciarSesion />
 {:else if page == "explorar-beneficios"}
     <ExplorarBeneficios />
 {:else if page == "agregar-productos"}

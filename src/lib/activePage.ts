@@ -2,6 +2,7 @@ import { writable } from 'svelte/store';
 
 const pagesKeys = <const>[
     "inicio",
+    "iniciar-sesion",
     "mis-productos",
     "explorar-beneficios",
     "agregar-productos",

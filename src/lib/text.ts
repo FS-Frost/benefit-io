@@ -7,6 +7,8 @@ export default {
     paginaExplorar: "Explorar beneficios",
     paginaAgregarProductos: "Añadir productos",
     acercaDe: `Acerca de ${appName}`,
+    iniciarSesion: `Iniciar sesión`,
+    cerrarSesion: `Cerrar sesión`,
 };
 
 export function capitalizeFirstLetter(string: string): string {

@@ -1,6 +1,6 @@
-<script>
-    import NavBar from "$lib/gui/nav/NavBar.svelte";
+<script lang="ts">
     import "./styles.css";
+    import NavBar from "$lib/gui/nav/NavBar.svelte";
 </script>
 
 <div class="app">
