@@ -26,17 +26,23 @@
         }
     }
 
-    function manejarCerrarSesion(): void {
-        Swal.fire({
-            title: "Cerrando sesión",
+    async function manejarCerrarSesion(): Promise<void> {
+        const response = await Swal.fire({
+            icon: "question",
+            title: "¿Cerrar sesión?",
             allowOutsideClick: false,
             allowEscapeKey: false,
             allowEnterKey: false,
-            didOpen: () => Swal.showLoading(),
+            confirmButtonText: "Aceptar",
+            cancelButtonText: "Cancelar",
+            showCancelButton: true,
         });
 
+        if (!response.isConfirmed) {
+            return;
+        }
+
         cerrarSesion();
-        location.reload();
     }
 
     onMount(async () => {

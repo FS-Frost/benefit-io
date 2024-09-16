@@ -61,4 +61,5 @@ export function sesionEsValida(): boolean {
 export function cerrarSesion(): void {
     const pb = new PocketBase(POCKETBASE_URL);
     pb.authStore.clear();
+    storeUsuario.set(null);
 }
