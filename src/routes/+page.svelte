@@ -11,6 +11,7 @@
         storeUsuario,
         Usuario,
     } from "$lib/auth";
+    import NavBar from "$lib/gui/nav/NavBar.svelte";
 
     const BuildInfo = z.object({
         time: z.number().default(0),
@@ -59,38 +60,52 @@
     });
 </script>
 
-<BusquedaBeneficios />
+<NavBar />
 
-<!-- Título -->
-<div class="title is-3">{text.appName}</div>
+<main class="layout">
+    <BusquedaBeneficios />
 
-{#if fechaActualizacion.length > 0}
-    <p class="actualizacion">Actualizado el {fechaActualizacion}</p>
-{/if}
+    <!-- Título -->
+    <div class="title is-3">{text.appName}</div>
 
-{#if usuario != null}
-    <p>¡Hola, {usuario.email}!</p>
-{:else}
-    <button
-        class="button is-link is-fullwidth mt-2"
-        on:click={() => iniciarSesionGoogle()}
-    >
-        Iniciar sesión
-    </button>
-{/if}
+    {#if fechaActualizacion.length > 0}
+        <p class="actualizacion">Actualizado el {fechaActualizacion}</p>
+    {/if}
 
-<hr />
+    {#if usuario != null}
+        <p>¡Hola, {usuario.email}!</p>
+    {:else}
+        <button
+            class="button is-link is-fullwidth mt-2"
+            on:click={() => iniciarSesionGoogle()}
+        >
+            Iniciar sesión
+        </button>
+    {/if}
 
-<!-- Contenido -->
-<div class="router">
-    <Router />
-</div>
+    <hr />
 
-<hr />
+    <!-- Contenido -->
+    <div class="router">
+        <Router />
+    </div>
 
-<Opciones />
+    <hr />
+
+    <Opciones />
+</main>
 
 <style>
+    main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
     .title {
         margin: 0;
     }

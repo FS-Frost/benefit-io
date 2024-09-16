@@ -97,7 +97,6 @@
 
         ordenarInfoDias(infoDias);
         infoDias = [...infoDias];
-        console.log("infoDias", infoDias);
     }
 
     onMount(() => {

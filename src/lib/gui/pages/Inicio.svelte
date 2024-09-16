@@ -18,7 +18,6 @@
     let productosUsuario: Producto[] = [];
 
     function filtrarDescuentos(): void {
-        console.log("filtrarDescuentos");
         infoDias = [];
 
         const hoy = capitalizeFirstLetter(
@@ -98,10 +97,9 @@
 
         ordenarInfoDias(infoDias);
         infoDias = [...infoDias];
-        console.log(infoDias);
     }
 
-    onMount(() => {
+    onMount(async () => {
         descuentos = obtenerDescuentos();
 
         fecha = capitalizeFirstLetter(
@@ -111,7 +109,7 @@
                 month: "long",
                 weekday: "long",
             }),
-        );
+        ).replaceAll(",", "");
 
         try {
             const rawProductosUsuario =
@@ -137,7 +135,7 @@
 <section class="inicio">
     <div class="mis-beneficios mb-4">
         <div class="titulo-beneficios">
-            <div class="title is-3">Mis beneficios</div>
+            <div class="title is-3">{text.paginaBeneficios}</div>
 
             <div class="title subtitle mt-2 is-6">{fecha}</div>
         </div>

@@ -1,14 +1,9 @@
 <script lang="ts">
     import "./styles.css";
-    import NavBar from "$lib/gui/nav/NavBar.svelte";
 </script>
 
 <div class="app">
-    <NavBar />
-
-    <main class="layout">
-        <slot />
-    </main>
+    <slot />
 </div>
 
 <style>
@@ -16,15 +11,5 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-    }
-
-    main {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        padding: 2rem;
-        width: 100%;
-        margin: 0 auto;
-        box-sizing: border-box;
     }
 </style>
