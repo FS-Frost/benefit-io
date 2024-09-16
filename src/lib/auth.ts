@@ -26,32 +26,31 @@ export function obtenerUsuario(): Usuario | null {
     }
 }
 
-export async function iniciarSesionGoogle(): Promise<AuthModel | null> {
-    let model: AuthModel | null = null;
+export async function iniciarSesionGoogle(): Promise<Usuario | null> {
+    let usuario: Usuario | null = null;
 
-    try {
-        const pb = new PocketBase(POCKETBASE_URL);
+    AUTH: {
+        try {
+            const pb = new PocketBase(POCKETBASE_URL);
 
-        if (pb.authStore.isValid) {
-            model = pb.authStore.model;
-            return model;
-        }
+            if (pb.authStore.isValid) {
+                usuario = Usuario.parse(pb.authStore.model);
+                break AUTH;
+            }
 
-        const authData = await pb
-            .collection("users")
-            .authWithOAuth2({ provider: "google" });
+            const authData = await pb
+                .collection("users")
+                .authWithOAuth2({ provider: "google" });
 
-        model = authData.record;
-        return model;
-    } catch (error) {
-        console.error("error al iniciar sesión con google", error);
-        return null;
-    } finally {
-        if (model != null && "email" in model) {
-            const correo = model["email"];
-            storeUsuario.set(correo);
+            usuario = Usuario.parse(authData.record);
+        } catch (error) {
+            console.error("error al iniciar sesión con google", error);
+            return null;
         }
     }
+
+    storeUsuario.set(usuario);
+    return usuario;
 }
 
 export function sesionEsValida(): boolean {
