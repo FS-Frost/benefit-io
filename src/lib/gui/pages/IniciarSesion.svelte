@@ -15,7 +15,7 @@
         await Swal.fire({
             icon: "success",
             title: `Bienvenido, ${usuario.email}`,
-            confirmButtonText: "Continuar",
+            confirmButtonText: "Aceptar",
         });
     }
 </script>

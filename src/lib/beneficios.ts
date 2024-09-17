@@ -1,30 +1,33 @@
 import { z } from "zod";
 
-export const Proveedor = z.object({
-    nombre: z.string(),
-    productos: z.string().array(),
+export const Institucion = z.object({
+    nombre: z.string().default(""),
+    productos: z.string().array().default([]),
 });
 
-export type Proveedor = z.infer<typeof Proveedor>;
+export type Institucion = z.infer<typeof Institucion>;
 
 export const Producto = z.object({
-    nombre: z.string(),
-    proveedor: z.string(),
+    nombre: z.string().default(""),
+    institucion: z.string().default(""),
+    marca: z.string().default(""),
+    segmento: z.string().default(""),
+    categoria: z.string().default(""),
 });
 
 export type Producto = z.infer<typeof Producto>;
 
 export const Oferta = z.object({
-    tienda: z.string(),
-    descuento: z.number(),
+    local: z.string().default(""),
+    descuento: z.number().default(0),
 });
 
 export type Oferta = z.infer<typeof Oferta>;
 
 export const Beneficio = z.object({
-    proveedor: z.string(),
-    producto: z.string(),
-    ofertas: Oferta.array(),
+    institucion: z.string().default(""),
+    producto: z.string().default(""),
+    ofertas: Oferta.array().default([]),
 });
 
 export type Beneficio = z.infer<typeof Beneficio>;
@@ -35,24 +38,25 @@ export const Descuento = z.object({
     ordenMes: z.number().default(0),
     ciudad: z.string().default(""),
     dia: z.string().default(""),
-    proveedor: z.string().default(""),
+    institucion: z.string().default(""),
     producto: z.string().default(""),
-    tienda: z.string().default(""),
+    marcaTarjeta: z.string().default(""),
+    local: z.string().default(""),
     descuento: z.number().default(0),
 });
 
 export type Descuento = z.infer<typeof Descuento>;
 
 export const InfoProducto = Producto.extend({
-    ofertas: Oferta.array(),
+    ofertas: Oferta.array().default([]),
 });
 
 export type InfoProducto = z.infer<typeof InfoProducto>;
 
 export const InfoDia = z.object({
-    dia: z.string(),
-    orden: z.number(),
-    productos: InfoProducto.array(),
+    dia: z.string().default(""),
+    orden: z.number().default(0),
+    productos: InfoProducto.array().default([]),
 });
 
 export type InfoDia = z.infer<typeof InfoDia>;
@@ -63,7 +67,7 @@ export function ordenarInfoDias(infoDias: InfoDia[]): void {
     for (const dia of infoDias) {
         dia.productos.sort(
             (a, b) =>
-                a.proveedor.localeCompare(b.proveedor) ||
+                a.institucion.localeCompare(b.institucion) ||
                 a.nombre.localeCompare(b.nombre),
         );
 
@@ -71,7 +75,7 @@ export function ordenarInfoDias(infoDias: InfoDia[]): void {
             producto.ofertas.sort(
                 (a, b) =>
                     b.descuento - a.descuento ||
-                    a.tienda.localeCompare(b.tienda),
+                    a.local.localeCompare(b.local),
             );
         }
     }

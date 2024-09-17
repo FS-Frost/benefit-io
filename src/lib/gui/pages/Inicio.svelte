@@ -8,7 +8,6 @@
         type Descuento,
     } from "$lib/beneficios";
     import { KEY_PRODUCTOS } from "$lib/session";
-    import { activePage } from "$lib/activePage";
     import VistaInfoDia from "../VistaInfoDia.svelte";
     import { obtenerDescuentos } from "$lib/data";
 
@@ -49,7 +48,7 @@
             if (
                 !productosUsuario.some(
                     (x) =>
-                        x.proveedor === descuento.proveedor &&
+                        x.institucion === descuento.institucion &&
                         x.nombre === descuento.producto,
                 )
             ) {
@@ -70,14 +69,14 @@
 
             let indexProducto = infoDias[indexDia].productos.findIndex(
                 (x) =>
-                    x.proveedor === descuento.proveedor &&
+                    x.institucion === descuento.institucion &&
                     x.nombre === descuento.producto,
             );
 
             if (indexProducto < 0) {
                 infoDias[indexDia].productos.push({
                     nombre: descuento.producto,
-                    proveedor: descuento.proveedor,
+                    institucion: descuento.institucion,
                     ofertas: [],
                 });
 
@@ -86,11 +85,11 @@
 
             let indexOferta = infoDias[indexDia].productos[
                 indexProducto
-            ].ofertas.findIndex((x) => x.tienda === descuento.tienda);
+            ].ofertas.findIndex((x) => x.local === descuento.local);
 
             if (indexOferta < 0) {
                 infoDias[indexDia].productos[indexProducto].ofertas.push({
-                    tienda: descuento.tienda,
+                    local: descuento.local,
                     descuento: descuento.descuento,
                 });
             }

@@ -20,6 +20,14 @@ jobs:
               run: |
                   bun install
 
+            - name: Check
+              run: |
+                  bun check
+
+            - name: Test
+              run: |
+                  bun test
+
             - name: Build
               run: |
                   bun run build

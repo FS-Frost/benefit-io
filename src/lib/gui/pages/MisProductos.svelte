@@ -28,7 +28,7 @@
             //     !descuentos.some(
             //         (d) =>
             //             d.producto === producto.nombre &&
-            //             d.proveedor === producto.proveedor,
+            //             d.institucion === producto.institucion,
             //     )
             // ) {
             //     console.log(
@@ -40,7 +40,7 @@
 
             const lista: Producto[] | undefined = listasProductos.find(
                 (lista) =>
-                    lista.some((p) => p.proveedor === producto.proveedor),
+                    lista.some((p) => p.institucion === producto.institucion),
             );
 
             if (lista == null) {

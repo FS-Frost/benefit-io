@@ -4,28 +4,42 @@
 
     export let dia: InfoDia;
 
+    let hoy: string = "";
+
     onMount(() => {
+        hoy = new Date()
+            .toLocaleDateString("es-ES", {
+                weekday: "long",
+            })
+            .toLowerCase();
+
         dia.productos.sort((a, b) => a.nombre.localeCompare(b.nombre));
 
         for (const producto of dia.productos) {
             producto.ofertas.sort(
                 (a, b) =>
-                    b.descuento - a.descuento ||
-                    a.tienda.localeCompare(b.tienda),
+                    b.descuento - a.descuento || a.local.localeCompare(b.local),
             );
         }
     });
 </script>
 
 <div class="dia">
-    <div class="subtitulo">Septiembre: {dia.dia}</div>
+    <div class="subtitulo">
+        Septiembre: {dia.dia}
+        {#if dia.dia.toLowerCase() === hoy}
+            (hoy)
+        {/if}
+    </div>
 
     {#each dia.productos as producto}
-        <div class="producto">{producto.proveedor} - {producto.nombre}</div>
+        <div class="producto">
+            {producto.institucion} - {producto.nombre}
+        </div>
 
         {#each producto.ofertas as oferta}
             <div class="oferta">
-                <span class="local">{oferta.tienda}</span>
+                <span class="local">{oferta.local}</span>
                 <span class="descuento">{oferta.descuento} %</span>
             </div>
         {/each}

@@ -69,14 +69,14 @@
 
             let indexProducto = infoDias[indexDia].productos.findIndex(
                 (x) =>
-                    x.proveedor === descuento.proveedor &&
+                    x.institucion === descuento.institucion &&
                     x.nombre === descuento.producto,
             );
 
             if (indexProducto < 0) {
                 infoDias[indexDia].productos.push({
                     nombre: descuento.producto,
-                    proveedor: descuento.proveedor,
+                    institucion: descuento.institucion,
                     ofertas: [],
                 });
 
@@ -85,11 +85,11 @@
 
             let indexOferta = infoDias[indexDia].productos[
                 indexProducto
-            ].ofertas.findIndex((x) => x.tienda === descuento.tienda);
+            ].ofertas.findIndex((x) => x.local === descuento.local);
 
             if (indexOferta < 0) {
                 infoDias[indexDia].productos[indexProducto].ofertas.push({
-                    tienda: descuento.tienda,
+                    local: descuento.local,
                     descuento: descuento.descuento,
                 });
             }
@@ -133,14 +133,14 @@
                 productosUsuario.length > 0 &&
                 !productosUsuario.some(
                     (x) =>
-                        x.proveedor === descuento.proveedor &&
+                        x.institucion === descuento.institucion &&
                         x.nombre === descuento.producto,
                 )
             ) {
                 continue;
             }
 
-            placeholderBusqueda = `${hoy} ${descuento.tienda.toLowerCase()}`;
+            placeholderBusqueda = `${hoy} ${descuento.local.toLowerCase()}`;
             break;
         }
 
@@ -161,6 +161,10 @@
             <i class="fas fa-magnifying-glass"></i>
         </span>
     </div>
+
+    {#if busqueda.length > 0 && infoDias.length === 0}
+        <p class="mt-2">Búsqueda sin resultados.</p>
+    {/if}
 
     {#if infoDias.length > 0}
         <div class="mt-3">

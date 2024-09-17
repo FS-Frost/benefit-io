@@ -15,21 +15,21 @@
 
     let infoDias: InfoDia[] = [];
 
-    let proveedores: string[] = [];
+    let instituciones: string[] = [];
 
     let productos: string[] = [];
 
     let dias: string[] = [];
 
-    let tiendas: string[] = [];
+    let locales: string[] = [];
 
-    let proveedorSeleccionado: string = "";
+    let institucionSeleccionada: string = "";
 
     let productoSeleccionado: string = "";
 
     let diaSeleccionado: string = "";
 
-    let tiendaSeleccionada: string = "";
+    let localSeleccionado: string = "";
 
     let filtrosVisibles: boolean = false;
 
@@ -47,38 +47,37 @@
 
     type InfoDia = z.infer<typeof InfoDia>;
 
-    function filtrarProveedores(): void {
-        console.log("filtrarProveedores");
-        proveedores = [];
+    function filtrarInstituciones(): void {
+        instituciones = [];
         productos = [];
         dias = [];
-        tiendas = [];
-        proveedorSeleccionado = "";
+        locales = [];
+        institucionSeleccionada = "";
         productoSeleccionado = "";
         diaSeleccionado = "";
-        tiendaSeleccionada = "";
+        localSeleccionado = "";
 
         for (const descuento of descuentos) {
-            if (!proveedores.includes(descuento.proveedor)) {
-                proveedores.push(descuento.proveedor);
+            if (!instituciones.includes(descuento.institucion)) {
+                instituciones.push(descuento.institucion);
             }
         }
 
-        proveedores.sort((a, b) => a.localeCompare(b));
-        proveedores = [...proveedores];
+        instituciones.sort((a, b) => a.localeCompare(b));
+        instituciones = [...instituciones];
     }
 
     function filtrarProductos(): void {
         console.log("filtrarProductos");
         diaSeleccionado = "";
-        tiendaSeleccionada = "";
+        localSeleccionado = "";
         productos = [];
         dias = [];
-        tiendas = [];
+        locales = [];
 
         for (const descuento of descuentos) {
-            if (proveedorSeleccionado.length > 0) {
-                if (descuento.proveedor !== proveedorSeleccionado) {
+            if (institucionSeleccionada.length > 0) {
+                if (descuento.institucion !== institucionSeleccionada) {
                     continue;
                 }
             }
@@ -94,17 +93,17 @@
 
     function filtrarDias(): void {
         console.log("filtrarDias");
-        tiendaSeleccionada = "";
+        localSeleccionado = "";
         dias = [];
-        tiendas = [];
+        locales = [];
 
         for (const descuento of descuentos) {
             if (descuento.dia.split(" ").length > 1) {
                 continue;
             }
 
-            if (proveedorSeleccionado.length > 0) {
-                if (descuento.proveedor !== proveedorSeleccionado) {
+            if (institucionSeleccionada.length > 0) {
+                if (descuento.institucion !== institucionSeleccionada) {
                     continue;
                 }
             }
@@ -135,13 +134,12 @@
         dias = [...dias];
     }
 
-    function filtrarTiendas(): void {
-        console.log("filtrarTiendas");
-        tiendas = [];
+    function filtrarLocales(): void {
+        locales = [];
 
         for (const descuento of descuentos) {
-            if (proveedorSeleccionado.length > 0) {
-                if (descuento.proveedor !== proveedorSeleccionado) {
+            if (institucionSeleccionada.length > 0) {
+                if (descuento.institucion !== institucionSeleccionada) {
                     continue;
                 }
             }
@@ -158,13 +156,13 @@
                 }
             }
 
-            if (!tiendas.includes(descuento.tienda)) {
-                tiendas.push(descuento.tienda);
+            if (!locales.includes(descuento.local)) {
+                locales.push(descuento.local);
             }
         }
 
-        tiendas.sort((a, b) => a.localeCompare(b));
-        tiendas = [...tiendas];
+        locales.sort((a, b) => a.localeCompare(b));
+        locales = [...locales];
     }
 
     function filtrarDescuentos(): void {
@@ -187,8 +185,8 @@
             }
 
             if (
-                proveedorSeleccionado.length > 0 &&
-                descuento.proveedor !== proveedorSeleccionado
+                institucionSeleccionada.length > 0 &&
+                descuento.institucion !== institucionSeleccionada
             ) {
                 continue;
             }
@@ -208,8 +206,8 @@
             }
 
             if (
-                tiendaSeleccionada.length > 0 &&
-                descuento.tienda !== tiendaSeleccionada
+                localSeleccionado.length > 0 &&
+                descuento.local !== localSeleccionado
             ) {
                 continue;
             }
@@ -228,14 +226,14 @@
 
             let indexProducto = infoDias[indexDia].productos.findIndex(
                 (x) =>
-                    x.proveedor === descuento.proveedor &&
+                    x.institucion === descuento.institucion &&
                     x.nombre === descuento.producto,
             );
 
             if (indexProducto < 0) {
                 infoDias[indexDia].productos.push({
                     nombre: descuento.producto,
-                    proveedor: descuento.proveedor,
+                    institucion: descuento.institucion,
                     ofertas: [],
                 });
 
@@ -244,11 +242,11 @@
 
             let indexOferta = infoDias[indexDia].productos[
                 indexProducto
-            ].ofertas.findIndex((x) => x.tienda === descuento.tienda);
+            ].ofertas.findIndex((x) => x.local === descuento.local);
 
             if (indexOferta < 0) {
                 infoDias[indexDia].productos[indexProducto].ofertas.push({
-                    tienda: descuento.tienda,
+                    local: descuento.local,
                     descuento: descuento.descuento,
                 });
             }
@@ -256,17 +254,17 @@
 
         ordenarInfoDias(infoDias);
         infoDias = [...infoDias];
-        proveedores = [...proveedores];
+        instituciones = [...instituciones];
         console.log(infoDias);
     }
 
     onMount(async () => {
         descuentos = obtenerDescuentos();
         filtrarDescuentos();
-        filtrarProveedores();
+        filtrarInstituciones();
         filtrarProductos();
         filtrarDias();
-        filtrarTiendas();
+        filtrarLocales();
 
         await tick();
 
@@ -312,7 +310,7 @@
                 <label class="label" for="">Institución</label>
                 <div class="select">
                     <select
-                        bind:value={proveedorSeleccionado}
+                        bind:value={institucionSeleccionada}
                         on:change={() => {
                             filtrarProductos();
                             filtrarDescuentos();
@@ -320,9 +318,9 @@
                     >
                         <option value="">Ninguna</option>
 
-                        {#each proveedores as proveedor}
-                            <option value={proveedor}>
-                                {proveedor}
+                        {#each instituciones as institucion}
+                            <option value={institucion}>
+                                {institucion}
                             </option>
                         {/each}
                     </select>
@@ -356,7 +354,7 @@
                     <select
                         bind:value={diaSeleccionado}
                         on:change={() => {
-                            filtrarTiendas();
+                            filtrarLocales();
                             filtrarDescuentos();
                         }}
                     >
@@ -375,16 +373,16 @@
                 <label class="label" for="">Local</label>
                 <div class="select">
                     <select
-                        bind:value={tiendaSeleccionada}
+                        bind:value={localSeleccionado}
                         on:change={() => {
                             filtrarDescuentos();
                         }}
                     >
                         <option value="">Ninguno</option>
 
-                        {#each tiendas as tienda}
-                            <option value={tienda}>
-                                {tienda}
+                        {#each locales as local}
+                            <option value={local}>
+                                {local}
                             </option>
                         {/each}
                     </select>

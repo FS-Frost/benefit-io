@@ -1,9 +1,10 @@
 (x) Agregar descuentos desde planilla.
 (x) Búsqueda global.
-(x) Sugerencia de búsqueda global con una tienda del día de hoy.
+(x) Sugerencia de búsqueda global con un local del día de hoy.
 (x) Al explorar beneficios, autoscroll al día de hoy.
 (x) Mostrar fecha de última actualización.
 (x) Mostrar opciones inferiores en una sola fila.
+( ) Mostrar mes actual en src/lib/gui/VistaInfoDia.svelte
 (-) Cargar tarjetas desde JSON.
     Banco Santander
     Tarjeta de crédito [Visa|Amex]
