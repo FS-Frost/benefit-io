@@ -117,5 +117,6 @@
         font-size: larger;
         font-weight: bold;
         margin-left: 1rem;
+        margin-right: 1rem;
     }
 </style>
