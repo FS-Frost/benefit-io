@@ -1,6 +1,6 @@
 import type { Descuento, Producto } from "./beneficios";
-import jsonDescuentos from "./descuentos.json";
-import jsonTarjetas from "./tarjetas.json";
+import jsonDescuentos from "./jsonDescuentos";
+import jsonTarjetas from "./jsonTarjetas";
 
 export function obtenerDescuentos(): Descuento[] {
     const descuentos: Descuento[] = [];

@@ -1,4 +1,4 @@
-[
+export default [
     {
         "Institución Bancaria": "Banco Santander",
         "Tipo de Producto": "Tarjeta de Crédito",
@@ -552,4 +552,4 @@
         "Nombre Tarjeta": "Black",
         "Categoría": ""
     }
-]
+];

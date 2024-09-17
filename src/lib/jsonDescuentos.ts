@@ -1,4 +1,4 @@
-[
+export default [
     {
         "Año": "2024",
         "Mes": "Septiembre",
@@ -2703,4 +2703,4 @@
         "Observación": "",
         "Info": "https://portales.bancochile.cl/personas/beneficios/sabores/40-de-descuento-visa/detalles/calma-de-rita-40-dcto"
     }
-]
+];

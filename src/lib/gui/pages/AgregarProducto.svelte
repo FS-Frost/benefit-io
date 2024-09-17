@@ -4,9 +4,8 @@
     import { KEY_PRODUCTOS } from "$lib/session";
     import { Producto } from "$lib/beneficios";
     import { obtenerTarjetas } from "$lib/data";
-    import jsonTarjetas from "$lib/tarjetas.json";
+    import jsonTarjetas from "$lib/jsonTarjetas";
     import Swal from "sweetalert2";
-    import { waitUntil } from "$lib/async";
 
     let selectInstitucion: HTMLElement | null = null;
     let selectProducto: HTMLElement | null = null;
