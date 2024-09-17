@@ -1,13 +1,27 @@
 <script lang="ts">
     import "./styles.css";
     import NavBar from "$lib/gui/nav/NavBar.svelte";
+    import { obtenerUsuario, storeUsuario, type Usuario } from "$lib/auth";
+    import { onMount } from "svelte";
+    import IniciarSesion from "$lib/gui/pages/IniciarSesion.svelte";
+
+    let usuario: Usuario | null = null;
+
+    onMount(async () => {
+        storeUsuario.set(obtenerUsuario());
+        storeUsuario.subscribe((valor) => (usuario = valor));
+    });
 </script>
 
 <div class="app">
     <NavBar />
 
     <main class="layout">
-        <slot />
+        {#if usuario == null}
+            <IniciarSesion />
+        {:else}
+            <slot />
+        {/if}
     </main>
 </div>
 

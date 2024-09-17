@@ -6,7 +6,6 @@ export default {
     paginaProductos: "Mis productos",
     paginaExplorar: "Explorar beneficios",
     paginaAgregarProductos: "Añadir productos",
-    acercaDe: `Acerca de ${appName}`,
     iniciarSesion: `Iniciar sesión`,
     cerrarSesion: `Cerrar sesión`,
     sinProductos: "No tienes productos registrados.",

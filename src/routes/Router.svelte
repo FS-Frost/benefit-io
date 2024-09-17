@@ -1,7 +1,6 @@
 <script lang="ts">
     import { activePage, type ActivePage, isPage } from "$lib/activePage";
     import { onMount } from "svelte";
-    import AcercaDe from "$lib/gui/pages/AcercaDe.svelte";
     import Inicio from "$lib/gui/pages/Inicio.svelte";
     import MisProductos from "$lib/gui/pages/MisProductos.svelte";
     import AgregarProducto from "$lib/gui/pages/AgregarProducto.svelte";
@@ -30,12 +29,8 @@
     <Inicio />
 {:else if page == "mis-productos"}
     <MisProductos />
-{:else if page == "iniciar-sesion"}
-    <IniciarSesion />
 {:else if page == "explorar-beneficios"}
     <ExplorarBeneficios />
 {:else if page == "agregar-productos"}
     <AgregarProducto />
-{:else if page == "acercaDe"}
-    <AcercaDe />
 {/if}

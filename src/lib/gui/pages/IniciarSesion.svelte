@@ -1,14 +1,22 @@
 <script lang="ts">
+    import { iniciarSesionGoogle } from "$lib/auth";
     import text from "$lib/text";
+    import Swal from "sweetalert2";
 
     // let mail: string = "";
     // let password: string = "";
 
-    async function iniciarSesionGoogle(): Promise<void> {
-        const authInfo = await iniciarSesionGoogle();
-        console.log("authInfo", authInfo);
+    async function manejarIniciarSesionGoogle(): Promise<void> {
+        const usuario = await iniciarSesionGoogle();
+        if (usuario == null) {
+            return;
+        }
 
-        // usuario.set(authInfo["email"]);
+        await Swal.fire({
+            icon: "success",
+            title: `Bienvenido, ${usuario.email}`,
+            confirmButtonText: "Continuar",
+        });
     }
 </script>
 
@@ -17,8 +25,6 @@
 </svelte:head>
 
 <section>
-    <div class="title is-3 has-text-centered">{text.appName}</div>
-
     <!-- <div class="field">
         <p class="control has-icons-left has-icons-right">
             <input
@@ -66,9 +72,21 @@
 
         <button
             class="button is-link is-fullwidth"
-            on:click={() => iniciarSesionGoogle()}
+            on:click={() => manejarIniciarSesionGoogle()}
         >
             Iniciar sesión con Google
         </button>
     </div>
 </section>
+
+<style>
+    section {
+        margin-top: 1rem;
+    }
+
+    button {
+        color: white;
+        font-weight: bold;
+        width: 100%;
+    }
+</style>

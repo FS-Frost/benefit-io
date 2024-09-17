@@ -3,12 +3,7 @@
     import NavItem from "./NavItem.svelte";
     import { BuildInfo, getBuildInfo } from "$lib/buildInfo";
     import text from "$lib/text";
-    import {
-        cerrarSesion,
-        iniciarSesionGoogle,
-        storeUsuario,
-        Usuario,
-    } from "$lib/auth";
+    import { cerrarSesion, storeUsuario, Usuario } from "$lib/auth";
     import Swal from "sweetalert2";
 
     let usuario: Usuario | null = null;
@@ -31,19 +26,6 @@
         if (navMenu) {
             navMenu.classList.toggle("is-active");
         }
-    }
-
-    async function manejarIniciarSesionGoogle(): Promise<void> {
-        const usuario = await iniciarSesionGoogle();
-        if (usuario == null) {
-            return;
-        }
-
-        await Swal.fire({
-            icon: "success",
-            title: `Bienvenido, ${usuario.email}`,
-            confirmButtonText: "Continuar",
-        });
     }
 
     async function manejarCerrarSesion(): Promise<void> {
@@ -101,28 +83,21 @@
 
     <div bind:this={navMenu} class="navbar-menu" id="navMenu">
         <div class="navbar-start">
-            <NavItem text={text.paginaBeneficios} page="inicio" />
+            {#if usuario != null}
+                <NavItem text={text.paginaBeneficios} page="inicio" />
 
-            <NavItem text={text.paginaProductos} page="mis-productos" />
+                <NavItem text={text.paginaProductos} page="mis-productos" />
 
-            <NavItem text={text.paginaExplorar} page="explorar-beneficios" />
+                <NavItem
+                    text={text.paginaExplorar}
+                    page="explorar-beneficios"
+                />
 
-            <NavItem
-                text={text.paginaAgregarProductos}
-                page="agregar-productos"
-            />
+                <NavItem
+                    text={text.paginaAgregarProductos}
+                    page="agregar-productos"
+                />
 
-            <!-- <NavItem text={text.acercaDe} page="acercaDe" /> -->
-
-            {#if usuario == null}
-                <a
-                    class="navbar-item"
-                    href="#_"
-                    on:click={() => manejarIniciarSesionGoogle()}
-                >
-                    {text.iniciarSesion}
-                </a>
-            {:else}
                 <a
                     class="navbar-item"
                     href="#_"
