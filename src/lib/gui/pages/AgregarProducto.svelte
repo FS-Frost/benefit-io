@@ -1,11 +1,18 @@
 <script lang="ts">
     import text from "$lib/text";
-    import { onMount } from "svelte";
+    import { onMount, tick } from "svelte";
     import { KEY_PRODUCTOS } from "$lib/session";
     import { Producto } from "$lib/beneficios";
     import { obtenerTarjetas } from "$lib/data";
     import jsonTarjetas from "$lib/tarjetas.json";
     import Swal from "sweetalert2";
+    import { waitUntil } from "$lib/async";
+
+    let selectInstitucion: HTMLElement | null = null;
+    let selectProducto: HTMLElement | null = null;
+    let selectMarca: HTMLElement | null = null;
+    let selectTarjeta: HTMLElement | null = null;
+    let botonAgregar: HTMLElement | null = null;
 
     let tarjetas: Producto[] = [];
 
@@ -21,7 +28,7 @@
     let opcionesTarjeta: string[] = [];
     let tarjetaSeleccionada: string = "";
 
-    function filtrarInstituciones(): void {
+    async function filtrarInstituciones(): Promise<void> {
         opcionesInstitucion = [...new Set(tarjetas.map((x) => x.institucion))];
         opcionesProducto = [];
         opcionesMarca = [];
@@ -33,9 +40,14 @@
 
         opcionesInstitucion.sort((a, b) => a.localeCompare(b));
         opcionesInstitucion = [...opcionesInstitucion];
+
+        await tick();
+        if (selectInstitucion != null) {
+            selectInstitucion.scrollIntoView();
+        }
     }
 
-    function filtrarProductos(): void {
+    async function filtrarProductos(): Promise<void> {
         opcionesMarca = [];
         opcionesTarjeta = [];
         productoSeleccionado = "";
@@ -52,9 +64,14 @@
 
         opcionesProducto.sort((a, b) => a.localeCompare(b));
         opcionesProducto = [...opcionesProducto];
+
+        await tick();
+        if (selectProducto != null) {
+            selectProducto.scrollIntoView();
+        }
     }
 
-    function filtrarMarcas(): void {
+    async function filtrarMarcas(): Promise<void> {
         opcionesTarjeta = [];
         marcaSeleccionada = "";
         tarjetaSeleccionada = "";
@@ -73,9 +90,14 @@
 
         opcionesMarca.sort((a, b) => a.localeCompare(b));
         opcionesMarca = [...opcionesMarca];
+
+        await tick();
+        if (selectMarca != null) {
+            selectMarca.scrollIntoView();
+        }
     }
 
-    function filtrarTarjetas(): void {
+    async function filtrarTarjetas(): Promise<void> {
         tarjetaSeleccionada = "";
 
         opcionesTarjeta = [
@@ -93,6 +115,18 @@
 
         opcionesTarjeta.sort((a, b) => a.localeCompare(b));
         opcionesTarjeta = [...opcionesTarjeta];
+
+        await tick();
+        if (selectTarjeta != null) {
+            selectTarjeta.scrollIntoView();
+        }
+    }
+
+    async function manejarTarjetaSeleccionada(): Promise<void> {
+        await tick();
+        if (botonAgregar != null) {
+            botonAgregar.scrollIntoView();
+        }
     }
 
     function agregarProducto(): void {
@@ -166,7 +200,7 @@
         </div>
     </div>
 
-    <div class="field">
+    <div class="field" bind:this={selectInstitucion}>
         <label class="label" for="">Institución</label>
         <div class="select">
             <select
@@ -183,7 +217,7 @@
     </div>
 
     {#if opcionesProducto.length > 0}
-        <div class="field">
+        <div class="field" bind:this={selectProducto}>
             <label class="label" for="">Producto</label>
             <div class="select">
                 <select
@@ -201,7 +235,7 @@
     {/if}
 
     {#if opcionesMarca.length > 0}
-        <div class="field">
+        <div class="field" bind:this={selectMarca}>
             <label class="label" for="">Marca</label>
             <div class="select">
                 <select
@@ -219,10 +253,13 @@
     {/if}
 
     {#if opcionesTarjeta.length > 0}
-        <div class="field">
+        <div class="field" bind:this={selectTarjeta}>
             <label class="label" for="">Tarjeta</label>
             <div class="select">
-                <select bind:value={tarjetaSeleccionada}>
+                <select
+                    bind:value={tarjetaSeleccionada}
+                    on:click={() => manejarTarjetaSeleccionada()}
+                >
                     {#each opcionesTarjeta as tarjeta}
                         <option value={tarjeta}>
                             {tarjeta}
@@ -233,15 +270,15 @@
         </div>
     {/if}
 
-    <div class="buttons">
+    {#if institucionSeleccionada.length > 0 && productoSeleccionado.length > 0 && marcaSeleccionada.length > 0 && tarjetaSeleccionada.length > 0}
         <button
-            class="button is-success"
-            disabled={productoSeleccionado.length == 0}
+            class="button is-success mt-2"
+            bind:this={botonAgregar}
             on:click={() => agregarProducto()}
         >
             Añadir producto
         </button>
-    </div>
+    {/if}
 </section>
 
 <style>

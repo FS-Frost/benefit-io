@@ -11,26 +11,21 @@
     import VistaInfoDia from "../VistaInfoDia.svelte";
     import { obtenerDescuentos } from "$lib/data";
 
+    let selectInstitucion: HTMLElement | null = null;
+    let selectProducto: HTMLElement | null = null;
+    let selectDia: HTMLElement | null = null;
+    let selectLocal: HTMLElement | null = null;
+    let divDescuentos: HTMLElement;
     let descuentos: Descuento[] = [];
-
     let infoDias: InfoDia[] = [];
-
-    let instituciones: string[] = [];
-
-    let productos: string[] = [];
-
-    let dias: string[] = [];
-
-    let locales: string[] = [];
-
+    let opcionesInstitucion: string[] = [];
+    let opcionesProducto: string[] = [];
+    let opcionesDia: string[] = [];
+    let opcionesLocal: string[] = [];
     let institucionSeleccionada: string = "";
-
     let productoSeleccionado: string = "";
-
     let diaSeleccionado: string = "";
-
     let localSeleccionado: string = "";
-
     let filtrosVisibles: boolean = false;
 
     const InfoProducto = Producto.extend({
@@ -48,31 +43,31 @@
     type InfoDia = z.infer<typeof InfoDia>;
 
     function filtrarInstituciones(): void {
-        instituciones = [];
-        productos = [];
-        dias = [];
-        locales = [];
+        opcionesInstitucion = [];
+        opcionesProducto = [];
+        opcionesDia = [];
+        opcionesLocal = [];
         institucionSeleccionada = "";
         productoSeleccionado = "";
         diaSeleccionado = "";
         localSeleccionado = "";
 
         for (const descuento of descuentos) {
-            if (!instituciones.includes(descuento.producto.institucion)) {
-                instituciones.push(descuento.producto.institucion);
+            if (!opcionesInstitucion.includes(descuento.producto.institucion)) {
+                opcionesInstitucion.push(descuento.producto.institucion);
             }
         }
 
-        instituciones.sort((a, b) => a.localeCompare(b));
-        instituciones = [...instituciones];
+        opcionesInstitucion.sort((a, b) => a.localeCompare(b));
+        opcionesInstitucion = [...opcionesInstitucion];
     }
 
     function filtrarProductos(): void {
         diaSeleccionado = "";
         localSeleccionado = "";
-        productos = [];
-        dias = [];
-        locales = [];
+        opcionesProducto = [];
+        opcionesDia = [];
+        opcionesLocal = [];
 
         for (const descuento of descuentos) {
             if (institucionSeleccionada.length > 0) {
@@ -83,19 +78,19 @@
                 }
             }
 
-            if (!productos.includes(descuento.producto.nombre)) {
-                productos.push(descuento.producto.nombre);
+            if (!opcionesProducto.includes(descuento.producto.nombre)) {
+                opcionesProducto.push(descuento.producto.nombre);
             }
         }
 
-        productos.sort((a, b) => a.localeCompare(b));
-        productos = [...productos];
+        opcionesProducto.sort((a, b) => a.localeCompare(b));
+        opcionesProducto = [...opcionesProducto];
     }
 
     function filtrarDias(): void {
         localSeleccionado = "";
-        dias = [];
-        locales = [];
+        opcionesDia = [];
+        opcionesLocal = [];
 
         for (const descuento of descuentos) {
             if (descuento.dia.split(" ").length > 1) {
@@ -116,12 +111,12 @@
                 }
             }
 
-            if (!dias.includes(descuento.dia)) {
-                dias.push(descuento.dia);
+            if (!opcionesDia.includes(descuento.dia)) {
+                opcionesDia.push(descuento.dia);
             }
         }
 
-        dias = [
+        opcionesDia = [
             "lunes",
             "martes",
             "miércoles",
@@ -130,14 +125,14 @@
             "sábado",
             "domingo",
         ]
-            .filter((x) => dias.map((d) => d.toLowerCase()).includes(x))
+            .filter((x) => opcionesDia.map((d) => d.toLowerCase()).includes(x))
             .map((x) => capitalizeFirstLetter(x));
 
-        dias = [...dias];
+        opcionesDia = [...opcionesDia];
     }
 
     function filtrarLocales(): void {
-        locales = [];
+        opcionesLocal = [];
 
         for (const descuento of descuentos) {
             if (institucionSeleccionada.length > 0) {
@@ -160,13 +155,13 @@
                 }
             }
 
-            if (!locales.includes(descuento.local)) {
-                locales.push(descuento.local);
+            if (!opcionesLocal.includes(descuento.local)) {
+                opcionesLocal.push(descuento.local);
             }
         }
 
-        locales.sort((a, b) => a.localeCompare(b));
-        locales = [...locales];
+        opcionesLocal.sort((a, b) => a.localeCompare(b));
+        opcionesLocal = [...opcionesLocal];
     }
 
     function filtrarDescuentos(): void {
@@ -263,7 +258,7 @@
 
         ordenarInfoDias(infoDias);
         infoDias = [...infoDias];
-        instituciones = [...instituciones];
+        opcionesInstitucion = [...opcionesInstitucion];
     }
 
     onMount(async () => {
@@ -312,19 +307,24 @@
 
     {#if filtrosVisibles}
         <div class="filtros mt-2">
-            <div class="field">
+            <div class="field" bind:this={selectInstitucion}>
                 <label class="label" for="">Institución</label>
                 <div class="select">
                     <select
                         bind:value={institucionSeleccionada}
-                        on:change={() => {
+                        disabled={opcionesInstitucion.length === 0}
+                        on:change={async () => {
                             filtrarProductos();
                             filtrarDescuentos();
+                            await tick();
+                            if (selectProducto != null) {
+                                selectProducto.scrollIntoView();
+                            }
                         }}
                     >
                         <option value="">Ninguna</option>
 
-                        {#each instituciones as institucion}
+                        {#each opcionesInstitucion as institucion}
                             <option value={institucion}>
                                 {institucion}
                             </option>
@@ -333,19 +333,25 @@
                 </div>
             </div>
 
-            <div class="field">
+            <div class="field" bind:this={selectProducto}>
                 <label class="label" for="">Producto</label>
                 <div class="select">
                     <select
                         bind:value={productoSeleccionado}
-                        on:change={() => {
+                        disabled={opcionesProducto.length === 0}
+                        on:change={async () => {
                             filtrarDias();
                             filtrarDescuentos();
+
+                            await tick();
+                            if (selectDia != null) {
+                                selectDia.scrollIntoView();
+                            }
                         }}
                     >
                         <option value="">Ninguno</option>
 
-                        {#each productos as producto}
+                        {#each opcionesProducto as producto}
                             <option value={producto}>
                                 {producto}
                             </option>
@@ -354,19 +360,25 @@
                 </div>
             </div>
 
-            <div class="field">
+            <div class="field" bind:this={selectDia}>
                 <label class="label" for="">Día de la semana</label>
                 <div class="select">
                     <select
                         bind:value={diaSeleccionado}
-                        on:change={() => {
+                        disabled={opcionesDia.length === 0}
+                        on:change={async () => {
                             filtrarLocales();
                             filtrarDescuentos();
+
+                            await tick();
+                            if (selectLocal != null) {
+                                selectLocal.scrollIntoView();
+                            }
                         }}
                     >
                         <option value="">Ninguno</option>
 
-                        {#each dias as dia}
+                        {#each opcionesDia as dia}
                             <option value={dia}>
                                 {dia}
                             </option>
@@ -375,18 +387,20 @@
                 </div>
             </div>
 
-            <div class="field">
+            <div class="field" bind:this={selectLocal}>
                 <label class="label" for="">Local</label>
                 <div class="select">
                     <select
                         bind:value={localSeleccionado}
+                        disabled={opcionesLocal.length === 0}
                         on:change={() => {
                             filtrarDescuentos();
+                            divDescuentos.scrollIntoView();
                         }}
                     >
                         <option value="">Ninguno</option>
 
-                        {#each locales as local}
+                        {#each opcionesLocal as local}
                             <option value={local}>
                                 {local}
                             </option>
@@ -397,7 +411,7 @@
         </div>
     {/if}
 
-    <div class="descuentos mt-4">
+    <div class="descuentos mt-4" bind:this={divDescuentos}>
         {#each infoDias as dia}
             <span id={`explorar-dia-${dia.dia.toLowerCase()}`}></span>
             <VistaInfoDia {dia} />
