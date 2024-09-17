@@ -21,7 +21,7 @@
         if (
             !response.headers.get("content-type")?.includes("application/json")
         ) {
-            console.log(
+            console.error(
                 "fetch build info",
                 response.status,
                 await response.text(),

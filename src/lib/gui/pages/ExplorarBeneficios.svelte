@@ -58,8 +58,8 @@
         localSeleccionado = "";
 
         for (const descuento of descuentos) {
-            if (!instituciones.includes(descuento.institucion)) {
-                instituciones.push(descuento.institucion);
+            if (!instituciones.includes(descuento.producto.institucion)) {
+                instituciones.push(descuento.producto.institucion);
             }
         }
 
@@ -68,7 +68,6 @@
     }
 
     function filtrarProductos(): void {
-        console.log("filtrarProductos");
         diaSeleccionado = "";
         localSeleccionado = "";
         productos = [];
@@ -77,13 +76,15 @@
 
         for (const descuento of descuentos) {
             if (institucionSeleccionada.length > 0) {
-                if (descuento.institucion !== institucionSeleccionada) {
+                if (
+                    descuento.producto.institucion !== institucionSeleccionada
+                ) {
                     continue;
                 }
             }
 
-            if (!productos.includes(descuento.producto)) {
-                productos.push(descuento.producto);
+            if (!productos.includes(descuento.producto.nombre)) {
+                productos.push(descuento.producto.nombre);
             }
         }
 
@@ -92,7 +93,6 @@
     }
 
     function filtrarDias(): void {
-        console.log("filtrarDias");
         localSeleccionado = "";
         dias = [];
         locales = [];
@@ -103,13 +103,15 @@
             }
 
             if (institucionSeleccionada.length > 0) {
-                if (descuento.institucion !== institucionSeleccionada) {
+                if (
+                    descuento.producto.institucion !== institucionSeleccionada
+                ) {
                     continue;
                 }
             }
 
             if (productoSeleccionado.length > 0) {
-                if (descuento.producto !== productoSeleccionado) {
+                if (descuento.producto.nombre !== productoSeleccionado) {
                     continue;
                 }
             }
@@ -139,13 +141,15 @@
 
         for (const descuento of descuentos) {
             if (institucionSeleccionada.length > 0) {
-                if (descuento.institucion !== institucionSeleccionada) {
+                if (
+                    descuento.producto.institucion !== institucionSeleccionada
+                ) {
                     continue;
                 }
             }
 
             if (productoSeleccionado.length > 0) {
-                if (descuento.producto !== productoSeleccionado) {
+                if (descuento.producto.nombre !== productoSeleccionado) {
                     continue;
                 }
             }
@@ -166,7 +170,6 @@
     }
 
     function filtrarDescuentos(): void {
-        console.log("filtrarDescuentos");
         infoDias = [];
 
         const nombresDias: string[] = [
@@ -186,14 +189,14 @@
 
             if (
                 institucionSeleccionada.length > 0 &&
-                descuento.institucion !== institucionSeleccionada
+                descuento.producto.institucion !== institucionSeleccionada
             ) {
                 continue;
             }
 
             if (
                 productoSeleccionado.length > 0 &&
-                descuento.producto !== productoSeleccionado
+                descuento.producto.nombre !== productoSeleccionado
             ) {
                 continue;
             }
@@ -226,14 +229,20 @@
 
             let indexProducto = infoDias[indexDia].productos.findIndex(
                 (x) =>
-                    x.institucion === descuento.institucion &&
-                    x.nombre === descuento.producto,
+                    x.institucion === descuento.producto.institucion &&
+                    x.nombre === descuento.producto.nombre &&
+                    x.marca === descuento.producto.marca &&
+                    x.segmento === descuento.producto.segmento &&
+                    x.categoria === descuento.producto.categoria,
             );
 
             if (indexProducto < 0) {
                 infoDias[indexDia].productos.push({
-                    nombre: descuento.producto,
-                    institucion: descuento.institucion,
+                    nombre: descuento.producto.nombre,
+                    institucion: descuento.producto.institucion,
+                    marca: descuento.producto.marca,
+                    segmento: descuento.producto.segmento,
+                    categoria: descuento.producto.categoria,
                     ofertas: [],
                 });
 
@@ -255,7 +264,6 @@
         ordenarInfoDias(infoDias);
         infoDias = [...infoDias];
         instituciones = [...instituciones];
-        console.log(infoDias);
     }
 
     onMount(async () => {
@@ -278,9 +286,7 @@
             `#explorar-dia-${hoy}`,
         );
 
-        console.log(`explorar-dia-${hoy}`);
         if (elementInfoDiaHoy != null) {
-            console.log("scroll");
             elementInfoDiaHoy.scrollIntoView();
         }
     });

@@ -34,7 +34,10 @@
 
     {#each dia.productos as producto}
         <div class="producto">
-            {producto.institucion} - {producto.nombre}
+            {producto.institucion}
+            {producto.nombre}
+            {producto.marca}
+            {producto.segmento}
         </div>
 
         {#each producto.ofertas as oferta}

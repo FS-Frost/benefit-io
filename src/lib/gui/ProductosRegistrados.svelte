@@ -39,18 +39,20 @@
 
         productosUsuario = productosUsuario.filter(
             (x) =>
-                x.institucion !== producto.institucion &&
-                x.nombre !== producto.nombre &&
-                x.marca !== producto.marca &&
-                x.segmento !== producto.segmento,
+                x.institucion !== producto.institucion ||
+                x.nombre !== producto.nombre ||
+                x.marca !== producto.marca ||
+                x.segmento !== producto.segmento ||
+                x.categoria !== producto.categoria,
         );
 
         productos = productos.filter(
             (x) =>
-                x.institucion !== producto.institucion &&
-                x.nombre !== producto.nombre &&
-                x.marca !== producto.marca &&
-                x.segmento !== producto.segmento,
+                x.institucion !== producto.institucion ||
+                x.nombre !== producto.nombre ||
+                x.marca !== producto.marca ||
+                x.segmento !== producto.segmento ||
+                x.categoria !== producto.categoria,
         );
 
         localStorage.setItem(KEY_PRODUCTOS, JSON.stringify(productosUsuario));

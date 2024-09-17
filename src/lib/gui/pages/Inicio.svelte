@@ -17,7 +17,6 @@
     let productosUsuario: Producto[] = [];
 
     function filtrarDescuentos(): void {
-        console.log("filtrarDescuentos");
         infoDias = [];
 
         const hoy = capitalizeFirstLetter(
@@ -45,11 +44,25 @@
                 continue;
             }
 
+            // El descuento aplica a algún producto del usuario
             if (
                 !productosUsuario.some(
                     (x) =>
-                        x.institucion === descuento.institucion &&
-                        x.nombre === descuento.producto,
+                        x.institucion === descuento.producto.institucion &&
+                        x.nombre === descuento.producto.nombre &&
+                        x.marca === descuento.producto.marca &&
+                        // Filtrar segmento sólo si el descuento lo indica
+                        (descuento.producto.segmento.length == 0
+                            ? true
+                            : x.segmento === descuento.producto.segmento) &&
+                        // Filtrar categoría sólo si el descuento la indica
+                        (descuento.producto.categoria.length == 0
+                            ? true
+                            : x.categoria
+                                  .toLowerCase()
+                                  .includes(
+                                      descuento.producto.categoria.toLowerCase(),
+                                  )),
                 )
             ) {
                 continue;
@@ -69,14 +82,30 @@
 
             let indexProducto = infoDias[indexDia].productos.findIndex(
                 (x) =>
-                    x.institucion === descuento.institucion &&
-                    x.nombre === descuento.producto,
+                    x.institucion === descuento.producto.institucion &&
+                    x.nombre === descuento.producto.nombre &&
+                    x.marca === descuento.producto.marca &&
+                    // Filtrar segmento sólo si el descuento lo indica
+                    (descuento.producto.segmento.length == 0
+                        ? true
+                        : x.segmento === descuento.producto.segmento) &&
+                    // Filtrar categoría sólo si el descuento la indica
+                    (descuento.producto.categoria.length == 0
+                        ? true
+                        : x.categoria
+                              .toLowerCase()
+                              .includes(
+                                  descuento.producto.categoria.toLowerCase(),
+                              )),
             );
 
             if (indexProducto < 0) {
                 infoDias[indexDia].productos.push({
-                    nombre: descuento.producto,
-                    institucion: descuento.institucion,
+                    nombre: descuento.producto.nombre,
+                    institucion: descuento.producto.institucion,
+                    marca: descuento.producto.marca,
+                    segmento: descuento.producto.segmento,
+                    categoria: descuento.producto.categoria,
                     ofertas: [],
                 });
 
@@ -97,7 +126,6 @@
 
         ordenarInfoDias(infoDias);
         infoDias = [...infoDias];
-        console.log(infoDias);
     }
 
     onMount(() => {

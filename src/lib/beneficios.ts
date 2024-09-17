@@ -38,9 +38,7 @@ export const Descuento = z.object({
     ordenMes: z.number().default(0),
     ciudad: z.string().default(""),
     dia: z.string().default(""),
-    institucion: z.string().default(""),
-    producto: z.string().default(""),
-    marcaTarjeta: z.string().default(""),
+    producto: Producto,
     local: z.string().default(""),
     descuento: z.number().default(0),
 });

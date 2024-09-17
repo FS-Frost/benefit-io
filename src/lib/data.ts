@@ -31,25 +31,38 @@ export function obtenerDescuentos(): Descuento[] {
             );
 
             const ordenMes = meses.indexOf(fila["Mes"]) + 1;
+            const instituciones = fila["Institución Financiera"].replaceAll(", ", ",").split(",");
             const productos = fila["Producto"].replaceAll(", ", ",").split(",");
             const dias = fila["Día"].replaceAll(", ", ",").split(",");
             const marcasTarjeta = fila["Marca de Tarjeta"].replaceAll(", ", ",").split(",");
+            const segmentosTarjeta = fila["Nombre Tarjeta"].replaceAll(", ", ",").split(",");
+            const categoriasTarjeta = fila["Categoría"].replaceAll(", ", ",").split(",");
 
-            for (const marcaTarjeta of marcasTarjeta) {
+            for (const institucion of instituciones) {
                 for (const producto of productos) {
-                    for (const dia of dias) {
-                        descuentos.push({
-                            ano: Number(fila["Año"]),
-                            ciudad: fila["Ciudad"],
-                            descuento: descuento,
-                            dia: dia,
-                            mes: fila["Mes"],
-                            ordenMes: ordenMes,
-                            producto: producto,
-                            marcaTarjeta: marcaTarjeta,
-                            institucion: fila["Institución Financiera"],
-                            local: fila["Local"],
-                        });
+                    for (const marcaTarjeta of marcasTarjeta) {
+                        for (const segmento of segmentosTarjeta) {
+                            for (const categoria of categoriasTarjeta) {
+                                for (const dia of dias) {
+                                    descuentos.push({
+                                        ano: Number(fila["Año"]),
+                                        mes: fila["Mes"],
+                                        ordenMes: ordenMes,
+                                        dia: dia,
+                                        ciudad: fila["Ciudad"],
+                                        producto: {
+                                            institucion: institucion,
+                                            nombre: producto,
+                                            marca: marcaTarjeta,
+                                            segmento: segmento,
+                                            categoria: categoria,
+                                        },
+                                        local: fila["Local"],
+                                        descuento: descuento,
+                                    });
+                                }
+                            }
+                        }
                     }
                 }
             }

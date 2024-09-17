@@ -69,14 +69,20 @@
 
             let indexProducto = infoDias[indexDia].productos.findIndex(
                 (x) =>
-                    x.institucion === descuento.institucion &&
-                    x.nombre === descuento.producto,
+                    x.institucion === descuento.producto.institucion &&
+                    x.nombre === descuento.producto.nombre &&
+                    x.marca === descuento.producto.marca &&
+                    x.segmento === descuento.producto.segmento &&
+                    x.categoria === descuento.producto.categoria,
             );
 
             if (indexProducto < 0) {
                 infoDias[indexDia].productos.push({
-                    nombre: descuento.producto,
-                    institucion: descuento.institucion,
+                    nombre: descuento.producto.nombre,
+                    institucion: descuento.producto.institucion,
+                    marca: descuento.producto.marca,
+                    segmento: descuento.producto.segmento,
+                    categoria: descuento.producto.categoria,
                     ofertas: [],
                 });
 
@@ -97,7 +103,6 @@
 
         ordenarInfoDias(infoDias);
         infoDias = [...infoDias];
-        console.log("infoDias", infoDias);
     }
 
     onMount(() => {
@@ -133,8 +138,11 @@
                 productosUsuario.length > 0 &&
                 !productosUsuario.some(
                     (x) =>
-                        x.institucion === descuento.institucion &&
-                        x.nombre === descuento.producto,
+                        x.institucion === descuento.producto.institucion &&
+                        x.nombre === descuento.producto.nombre &&
+                        x.marca === descuento.producto.marca &&
+                        x.segmento === descuento.producto.segmento &&
+                        x.categoria === descuento.producto.categoria,
                 )
             ) {
                 continue;
