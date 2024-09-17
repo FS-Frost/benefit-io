@@ -37,8 +37,10 @@
         marcaSeleccionada = "";
         tarjetaSeleccionada = "";
 
+        await tick();
         opcionesInstitucion.sort((a, b) => a.localeCompare(b));
         opcionesInstitucion = [...opcionesInstitucion];
+        console.log("opcionesInstitucion", opcionesInstitucion);
 
         await tick();
         if (selectInstitucion != null) {
@@ -53,6 +55,8 @@
         marcaSeleccionada = "";
         tarjetaSeleccionada = "";
 
+        await tick();
+        console.log("institucionSeleccionada", institucionSeleccionada);
         opcionesProducto = [
             ...new Set(
                 tarjetas
@@ -61,8 +65,10 @@
             ),
         ];
 
+        await tick();
         opcionesProducto.sort((a, b) => a.localeCompare(b));
         opcionesProducto = [...opcionesProducto];
+        console.log("opcionesProducto", opcionesProducto);
 
         await tick();
         if (selectProducto != null) {
@@ -89,6 +95,7 @@
 
         opcionesMarca.sort((a, b) => a.localeCompare(b));
         opcionesMarca = [...opcionesMarca];
+        console.log("opcionesMarca", opcionesMarca);
 
         await tick();
         if (selectMarca != null) {
@@ -114,6 +121,7 @@
 
         opcionesTarjeta.sort((a, b) => a.localeCompare(b));
         opcionesTarjeta = [...opcionesTarjeta];
+        console.log("opcionesTarjeta", opcionesTarjeta);
 
         await tick();
         if (selectTarjeta != null) {
@@ -204,7 +212,7 @@
         <div class="select">
             <select
                 bind:value={institucionSeleccionada}
-                on:click={() => filtrarProductos()}
+                on:change={() => filtrarProductos()}
             >
                 {#each opcionesInstitucion as institucion}
                     <option value={institucion}>
@@ -221,7 +229,7 @@
             <div class="select">
                 <select
                     bind:value={productoSeleccionado}
-                    on:click={() => filtrarMarcas()}
+                    on:change={() => filtrarMarcas()}
                 >
                     {#each opcionesProducto as producto}
                         <option value={producto}>
@@ -239,7 +247,7 @@
             <div class="select">
                 <select
                     bind:value={marcaSeleccionada}
-                    on:click={() => filtrarTarjetas()}
+                    on:change={() => filtrarTarjetas()}
                 >
                     {#each opcionesMarca as marca}
                         <option value={marca}>
