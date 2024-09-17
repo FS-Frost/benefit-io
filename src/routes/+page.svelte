@@ -5,7 +5,12 @@
     import { onMount } from "svelte";
     import Router from "./Router.svelte";
     import { z } from "zod";
-    import { iniciarSesionGoogle, obtenerUsuario, storeUsuario, Usuario } from "$lib/auth";
+    import {
+        iniciarSesionGoogle,
+        obtenerUsuario,
+        storeUsuario,
+        Usuario,
+    } from "$lib/auth";
 
     const BuildInfo = z.object({
         time: z.number().default(0),
@@ -19,8 +24,14 @@
 
     async function obtenerVersion(): Promise<void> {
         const response = await fetch("build-info.json");
-        if (!response.headers.get("content-type")?.includes("application/json")) {
-            console.log("fetch build info", response.status, await response.text());
+        if (
+            !response.headers.get("content-type")?.includes("application/json")
+        ) {
+            console.log(
+                "fetch build info",
+                response.status,
+                await response.text(),
+            );
             return;
         }
 
@@ -50,17 +61,19 @@
 
 <BusquedaBeneficios />
 
-<!-- Título -->
-<div class="title is-3">{text.appName}</div>
-
-{#if fechaActualizacion.length > 0}
-    <p class="actualizacion">Actualizado el {fechaActualizacion}</p>
-{/if}
-
 {#if usuario != null}
     <p class="usuario">¡Hola, {usuario.email}!</p>
 {:else}
-    <button class="button is-link is-fullwidth mt-2" on:click={() => iniciarSesionGoogle()}> Iniciar sesión </button>
+    <button
+        class="button is-link is-fullwidth mt-2"
+        on:click={() => iniciarSesionGoogle()}
+    >
+        Iniciar sesión
+    </button>
+{/if}
+
+{#if fechaActualizacion.length > 0}
+    <p class="actualizacion">Actualizado el {fechaActualizacion}</p>
 {/if}
 
 <hr />
@@ -75,10 +88,6 @@
 <Opciones />
 
 <style>
-    .title {
-        margin: 0;
-    }
-
     .usuario,
     .actualizacion {
         font-size: small;
@@ -91,7 +100,7 @@
     }
 
     .router {
-        height: 22rem;
+        height: 48vh;
         overflow: auto;
     }
 

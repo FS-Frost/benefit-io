@@ -10,9 +10,12 @@
 
     onMount(() => {
         try {
-            const rawProductosUsuario = localStorage.getItem(KEY_PRODUCTOS) ?? "[]";
+            const rawProductosUsuario =
+                localStorage.getItem(KEY_PRODUCTOS) ?? "[]";
 
-            productosUsuario = Producto.array().parse(JSON.parse(rawProductosUsuario));
+            productosUsuario = Producto.array().parse(
+                JSON.parse(rawProductosUsuario),
+            );
         } catch (error) {
             console.error("error al obtener productos guardados", error);
         }
@@ -35,7 +38,10 @@
             //     continue;
             // }
 
-            const lista: Producto[] | undefined = listasProductos.find((lista) => lista.some((p) => p.proveedor === producto.proveedor));
+            const lista: Producto[] | undefined = listasProductos.find(
+                (lista) =>
+                    lista.some((p) => p.proveedor === producto.proveedor),
+            );
 
             if (lista == null) {
                 listasProductos.push([producto]);
@@ -54,7 +60,7 @@
 <section class="inicio">
     <div class="mis-beneficios mb-4">
         <div class="titulo-beneficios">
-            <div class="title is-3">{text.paginaProductos}</div>
+            <div class="title is-4">{text.paginaProductos}</div>
         </div>
     </div>
 

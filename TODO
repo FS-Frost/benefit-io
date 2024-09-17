@@ -3,7 +3,7 @@
 (x) Sugerencia de búsqueda global con una tienda del día de hoy.
 (x) Al explorar beneficios, autoscroll al día de hoy.
 (x) Mostrar fecha de última actualización.
-(-) Mostrar opciones inferiores en una sola fila.
+(x) Mostrar opciones inferiores en una sola fila.
 (-) Cargar tarjetas desde JSON.
     Banco Santander
     Tarjeta de crédito [Visa|Amex]

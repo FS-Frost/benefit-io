@@ -93,7 +93,7 @@
 <section class="inicio">
     <div class="mis-beneficios mb-4">
         <div class="titulo-beneficios">
-            <div class="title is-3">{text.paginaAgregarProductos}</div>
+            <div class="title is-4">{text.paginaAgregarProductos}</div>
         </div>
     </div>
 

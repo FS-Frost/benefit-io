@@ -59,6 +59,15 @@
 
 <style>
     .opciones {
+        background-color: var(--main-color);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 0.7rem;
+        padding-bottom: 3rem;
         display: grid;
         grid-template-columns: auto auto auto auto;
         grid-gap: 1rem;

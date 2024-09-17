@@ -1,7 +1,12 @@
 <script lang="ts">
     import text, { capitalizeFirstLetter } from "$lib/text";
     import { onMount } from "svelte";
-    import { InfoDia, ordenarInfoDias, Producto, type Descuento } from "$lib/beneficios";
+    import {
+        InfoDia,
+        ordenarInfoDias,
+        Producto,
+        type Descuento,
+    } from "$lib/beneficios";
     import { KEY_PRODUCTOS } from "$lib/session";
     import { activePage } from "$lib/activePage";
     import VistaInfoDia from "../VistaInfoDia.svelte";
@@ -19,10 +24,18 @@
         const hoy = capitalizeFirstLetter(
             new Date().toLocaleDateString("es-ES", {
                 weekday: "long",
-            })
+            }),
         ).toLowerCase();
 
-        const nombresDias: string[] = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"];
+        const nombresDias: string[] = [
+            "lunes",
+            "martes",
+            "miércoles",
+            "jueves",
+            "viernes",
+            "sábado",
+            "domingo",
+        ];
 
         for (const descuento of descuentos) {
             if (descuento.dia.split(" ").length > 1) {
@@ -33,7 +46,13 @@
                 continue;
             }
 
-            if (!productosUsuario.some((x) => x.proveedor === descuento.proveedor && x.nombre === descuento.producto)) {
+            if (
+                !productosUsuario.some(
+                    (x) =>
+                        x.proveedor === descuento.proveedor &&
+                        x.nombre === descuento.producto,
+                )
+            ) {
                 continue;
             }
 
@@ -50,7 +69,9 @@
             }
 
             let indexProducto = infoDias[indexDia].productos.findIndex(
-                (x) => x.proveedor === descuento.proveedor && x.nombre === descuento.producto
+                (x) =>
+                    x.proveedor === descuento.proveedor &&
+                    x.nombre === descuento.producto,
             );
 
             if (indexProducto < 0) {
@@ -63,7 +84,9 @@
                 indexProducto = infoDias[indexDia].productos.length - 1;
             }
 
-            let indexOferta = infoDias[indexDia].productos[indexProducto].ofertas.findIndex((x) => x.tienda === descuento.tienda);
+            let indexOferta = infoDias[indexDia].productos[
+                indexProducto
+            ].ofertas.findIndex((x) => x.tienda === descuento.tienda);
 
             if (indexOferta < 0) {
                 infoDias[indexDia].productos[indexProducto].ofertas.push({
@@ -87,13 +110,16 @@
                 day: "numeric",
                 month: "long",
                 weekday: "long",
-            })
+            }),
         );
 
         try {
-            const rawProductosUsuario = localStorage.getItem(KEY_PRODUCTOS) ?? "[]";
+            const rawProductosUsuario =
+                localStorage.getItem(KEY_PRODUCTOS) ?? "[]";
 
-            productosUsuario = Producto.array().parse(JSON.parse(rawProductosUsuario));
+            productosUsuario = Producto.array().parse(
+                JSON.parse(rawProductosUsuario),
+            );
         } catch (error) {
             console.error("error al obtener productos guardados", error);
         }
@@ -111,16 +137,19 @@
 <section class="inicio">
     <div class="mis-beneficios mb-4">
         <div class="titulo-beneficios">
-            <div class="title is-3">Mis beneficios</div>
+            <div class="title is-4">Mis beneficios</div>
 
             <div class="title subtitle mt-2 is-6">{fecha}</div>
         </div>
 
-        <div class="opciones">
-            <button class="button button-opciones" on:click={() => alert("No implementado.")}>
+        <!-- <div class="opciones">
+            <button
+                class="button button-opciones"
+                on:click={() => alert("No implementado.")}
+            >
                 <i class="fa-solid fa-sliders"></i>
             </button>
-        </div>
+        </div> -->
     </div>
 
     <div class="descuentos mt-4">
@@ -150,7 +179,7 @@
         justify-content: space-between;
     }
 
-    .opciones button {
+    /* .opciones button {
         font-size: large;
     }
 
@@ -162,5 +191,5 @@
 
     .button-opciones {
         background-color: var(--color2);
-    }
+    } */
 </style>

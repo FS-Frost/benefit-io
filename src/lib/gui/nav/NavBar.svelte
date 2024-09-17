@@ -52,23 +52,26 @@
 </script>
 
 <nav class="navbar">
-    <a
-        bind:this={navToggle}
-        on:click={() => toggleMenu()}
-        role="button"
-        tabindex="0"
-        class="navbar-burger"
-        data-target="navMenu"
-        aria-label="menu"
-        aria-expanded="false"
-        on:keydown={() => {}}
-        href={`javascript:;`}
-    >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-    </a>
+    <div class="navbar-brand">
+        <div class="brand">{text.appName}</div>
+        <a
+            bind:this={navToggle}
+            on:click={() => toggleMenu()}
+            role="button"
+            tabindex="0"
+            class="navbar-burger"
+            data-target="navMenu"
+            aria-label="menu"
+            aria-expanded="false"
+            on:keydown={() => {}}
+            href={`javascript:;`}
+        >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
 
     <div bind:this={navMenu} class="navbar-menu" id="navMenu">
         <div class="navbar-start">
@@ -105,3 +108,14 @@
         </div>
     </div>
 </nav>
+
+<style>
+    .brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: larger;
+        font-weight: bold;
+        margin-left: 1rem;
+    }
+</style>

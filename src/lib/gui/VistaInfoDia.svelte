@@ -21,12 +21,12 @@
     <div class="subtitulo">Septiembre: {dia.dia}</div>
 
     {#each dia.productos as producto}
-        <div>{producto.proveedor} - {producto.nombre}</div>
+        <div class="producto">{producto.proveedor} - {producto.nombre}</div>
 
         {#each producto.ofertas as oferta}
             <div class="oferta">
-                <span>{oferta.tienda}</span>
-                <span>{oferta.descuento} %</span>
+                <span class="local">{oferta.tienda}</span>
+                <span class="descuento">{oferta.descuento} %</span>
             </div>
         {/each}
     {/each}
@@ -51,5 +51,14 @@
         color: rgb(120, 204, 85);
         display: flex;
         justify-content: space-between;
+        font-size: small;
+    }
+
+    .local {
+        width: 80%;
+    }
+
+    .descuento {
+        width: auto;
     }
 </style>

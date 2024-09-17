@@ -295,7 +295,7 @@
 <section class="inicio">
     <div class="mis-beneficios mb-4">
         <div class="titulo-beneficios">
-            <div class="title is-3">{text.paginaExplorar}</div>
+            <div class="title is-4">{text.paginaExplorar}</div>
         </div>
     </div>
 

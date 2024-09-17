@@ -23,6 +23,7 @@
         display: flex;
         flex-direction: column;
         padding: 2rem;
+        padding-top: 0.5rem;
         width: 100%;
         margin: 0 auto;
         box-sizing: border-box;
