@@ -1,10 +1,14 @@
 <script lang="ts">
-    import type { InfoDia } from "$lib/beneficios";
+    import type { InfoDia, Oferta } from "$lib/beneficios";
     import { onMount } from "svelte";
 
     export let dia: InfoDia;
 
     let hoy: string = "";
+
+    function mostrarOferta(oferta: Oferta): void {
+        alert(`${oferta.local}: ${oferta.descuento} %`);
+    }
 
     onMount(() => {
         hoy = new Date()
@@ -41,7 +45,13 @@
         </div>
 
         {#each producto.ofertas as oferta}
-            <div class="oferta">
+            <div
+                class="oferta"
+                on:click={() => mostrarOferta(oferta)}
+                on:keydown={() => {}}
+                role="button"
+                tabindex="0"
+            >
                 <span class="local">{oferta.local}</span>
                 <span class="descuento">{oferta.descuento} %</span>
             </div>
