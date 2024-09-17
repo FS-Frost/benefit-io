@@ -28,7 +28,7 @@
 
     async function manejarIniciarSesionGoogle(): Promise<void> {
         const usuario = await iniciarSesionGoogle();
-        if (usuario == null || usuario.email.length === 0) {
+        if (usuario == null) {
             return;
         }
 

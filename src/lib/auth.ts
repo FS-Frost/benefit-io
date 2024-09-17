@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import PocketBase, { type AuthModel } from "pocketbase";
+import PocketBase from "pocketbase";
 import { z } from "zod";
 
 export const POCKETBASE_URL: string = "https://benefit.pockethost.io";
@@ -7,7 +7,7 @@ export const POCKETBASE_URL: string = "https://benefit.pockethost.io";
 export const storeUsuario = writable<Usuario | null>();
 
 export const Usuario = z.object({
-    email: z.string(),
+    email: z.string().min(3),
 });
 
 export type Usuario = z.infer<typeof Usuario>;
