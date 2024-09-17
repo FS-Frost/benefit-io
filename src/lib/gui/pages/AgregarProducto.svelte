@@ -265,7 +265,7 @@
             <div class="select">
                 <select
                     bind:value={tarjetaSeleccionada}
-                    on:click={() => manejarTarjetaSeleccionada()}
+                    on:change={() => manejarTarjetaSeleccionada()}
                 >
                     {#each opcionesTarjeta as tarjeta}
                         <option value={tarjeta}>
