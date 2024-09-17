@@ -26,6 +26,19 @@
         }
     }
 
+    async function manejarIniciarSesionGoogle(): Promise<void> {
+        const usuario = await iniciarSesionGoogle();
+        if (usuario == null || usuario.email.length === 0) {
+            return;
+        }
+
+        await Swal.fire({
+            icon: "success",
+            title: `Bienvenido, ${usuario.email}`,
+            confirmButtonText: "Continuar",
+        });
+    }
+
     async function manejarCerrarSesion(): Promise<void> {
         const response = await Swal.fire({
             icon: "question",
@@ -92,7 +105,7 @@
                 <a
                     class="navbar-item"
                     href="#_"
-                    on:click={() => iniciarSesionGoogle()}
+                    on:click={() => manejarIniciarSesionGoogle()}
                 >
                     {text.iniciarSesion}
                 </a>
