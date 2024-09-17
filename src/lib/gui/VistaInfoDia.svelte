@@ -47,6 +47,10 @@
         color: rgb(173, 173, 173);
     }
 
+    .producto {
+        font-size: small;
+    }
+
     .oferta {
         color: rgb(120, 204, 85);
         display: flex;
