@@ -16,6 +16,13 @@
     let navMenu: HTMLElement;
     let navToggle: HTMLElement;
 
+    function menuIsOpen(): boolean {
+        return (
+            navToggle.classList.contains("is-active") ||
+            navMenu.classList.contains("is-active")
+        );
+    }
+
     function toggleMenu(): void {
         if (navToggle) {
             navToggle.classList.toggle("is-active");
@@ -60,7 +67,13 @@
 
     onMount(async () => {
         buildInfo = await getBuildInfo();
-        storeUsuario.subscribe((valor) => (usuario = valor));
+        storeUsuario.subscribe((valor) => {
+            usuario = valor;
+
+            if (menuIsOpen()) {
+                toggleMenu();
+            }
+        });
     });
 </script>
 
