@@ -65,6 +65,8 @@ export function convertirDescuentos(filas: FilaDescuento[]): Descuento[] {
                                         },
                                         local: fila["Local"],
                                         descuento: descuento,
+                                        observacion: fila["Observación"],
+                                        info: fila["Info"],
                                     });
                                 }
                             }

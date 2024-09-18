@@ -1,6 +1,13 @@
 const appName: string = "Benefit.io";
 
 export default {
+    aceptar: "Aceptar",
+    cancelar: "Cancelar",
+    error: "Error",
+    reintentar: "Reintentar",
+    deshacerCambios: "Deshacer cambios",
+    continuar: "Continuar",
+    cargando: "Cargando",
     appName: appName,
     paginaBeneficios: "Mis beneficios",
     paginaProductos: "Mis productos",

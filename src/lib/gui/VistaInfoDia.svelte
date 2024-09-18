@@ -1,13 +1,20 @@
 <script lang="ts">
-    import type { InfoDia, Oferta } from "$lib/beneficios";
+    import { Oferta, Producto, type InfoDia } from "$lib/beneficios";
     import { onMount } from "svelte";
+    import ModalOferta from "./ModalOferta.svelte";
 
     export let dia: InfoDia;
 
     let hoy: string = "";
+    let modalOferta: ModalOferta;
 
-    function mostrarOferta(oferta: Oferta): void {
-        alert(`${oferta.local}: ${oferta.descuento} %`);
+    function mostrarOferta(
+        dia: string,
+        producto: Producto,
+        oferta: Oferta,
+    ): void {
+        modalOferta.cargarOferta(dia, producto, oferta);
+        modalOferta.open();
     }
 
     onMount(() => {
@@ -47,7 +54,7 @@
         {#each producto.ofertas as oferta}
             <div
                 class="oferta"
-                on:click={() => mostrarOferta(oferta)}
+                on:click={() => mostrarOferta(dia.dia, producto, oferta)}
                 on:keydown={() => {}}
                 role="button"
                 tabindex="0"
@@ -58,6 +65,8 @@
         {/each}
     {/each}
 </div>
+
+<ModalOferta bind:this={modalOferta} />
 
 <style>
     .dia {

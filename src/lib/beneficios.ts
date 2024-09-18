@@ -20,6 +20,8 @@ export type Producto = z.infer<typeof Producto>;
 export const Oferta = z.object({
     local: z.string().default(""),
     descuento: z.number().default(0),
+    observacion: z.string().default(""),
+    info: z.string().default(""),
 });
 
 export type Oferta = z.infer<typeof Oferta>;
@@ -41,6 +43,8 @@ export const Descuento = z.object({
     producto: Producto,
     local: z.string().default(""),
     descuento: z.number().default(0),
+    observacion: z.string().default(""),
+    info: z.string().default(""),
 });
 
 export type Descuento = z.infer<typeof Descuento>;

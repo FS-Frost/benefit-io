@@ -97,6 +97,8 @@
                 infoDias[indexDia].productos[indexProducto].ofertas.push({
                     local: descuento.local,
                     descuento: descuento.descuento,
+                    observacion: descuento.observacion,
+                    info: descuento.info,
                 });
             }
         }
