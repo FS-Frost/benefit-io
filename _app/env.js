@@ -1,1 +1,1 @@
-export const env={}
+export const env={"PUBLIC_POCKETBASE_URL":"https://benefit.pockethost.io"}
