@@ -5,6 +5,7 @@
     import Router from "./Router.svelte";
     import { z } from "zod";
     import { storeUsuario, Usuario } from "$lib/auth";
+    import { storeViewMode, type ViewMode } from "$lib/session";
 
     const BuildInfo = z.object({
         time: z.number().default(0),
@@ -13,7 +14,7 @@
     type BuildInfo = z.infer<typeof BuildInfo>;
 
     let usuario: Usuario | null = null;
-
+    let viewMode: ViewMode = "user";
     let fechaActualizacion: string = "";
 
     async function obtenerVersion(): Promise<void> {
@@ -49,28 +50,35 @@
     onMount(async () => {
         await obtenerVersion();
         storeUsuario.subscribe((valor) => (usuario = valor));
+        storeViewMode.subscribe((valor) => {
+            viewMode = valor;
+        });
     });
 </script>
 
 {#if usuario != null}
-    <BusquedaBeneficios />
+    {#if viewMode === "user"}
+        <BusquedaBeneficios />
 
-    <p class="usuario">¡Hola, {usuario.email}!</p>
+        <p class="usuario">¡Hola, {usuario.email}!</p>
 
-    {#if fechaActualizacion.length > 0}
-        <p class="actualizacion">Actualizado el {fechaActualizacion}</p>
+        {#if fechaActualizacion.length > 0}
+            <p class="actualizacion">Actualizado el {fechaActualizacion}</p>
+        {/if}
+
+        <hr />
     {/if}
-
-    <hr />
 
     <!-- Contenido -->
     <div class="router">
         <Router />
     </div>
 
-    <hr />
+    {#if viewMode === "user"}
+        <hr />
 
-    <Opciones />
+        <Opciones />
+    {/if}
 {/if}
 
 <style>
