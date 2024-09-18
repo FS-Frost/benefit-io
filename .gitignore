@@ -3,9 +3,7 @@ node_modules
 /build
 /.svelte-kit
 /package
-.env
-.env.*
-!.env.example
+.env_pocketbase_typegen
 .vercel
 .output
 vite.config.js.timestamp-*

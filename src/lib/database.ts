@@ -1,7 +1,8 @@
 import PocketBase from "pocketbase";
 import type { MesRecord, TypedPocketBase } from "$lib/dbTypes";
+import { PUBLIC_POCKETBASE_URL } from "$env/static/public";
 
-export const POCKETBASE_URL: string = "https://benefit.pockethost.io";
+export const POCKETBASE_URL: string = PUBLIC_POCKETBASE_URL;
 
 export function newDatabaseConnection(): TypedPocketBase {
     return new PocketBase(POCKETBASE_URL);

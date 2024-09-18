@@ -2,6 +2,7 @@ import { writable } from 'svelte/store';
 
 const pagesKeys = <const>[
     "admin",
+    "admin-respaldos",
     "inicio",
     "mis-productos",
     "explorar-beneficios",

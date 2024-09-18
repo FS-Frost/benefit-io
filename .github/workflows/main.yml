@@ -30,6 +30,7 @@ jobs:
 
             - name: Build
               run: |
+                  PUBLIC_POCKETBASE_URL=https://benefit.pockethost.io \
                   bun run build
 
             - name: Change base-tag in index.html from / to benefit-io

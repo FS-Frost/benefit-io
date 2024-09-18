@@ -21,3 +21,27 @@
     INFORMACIÓN
     ENLACE
 ( ) Mostrar mes actual en src/lib/gui/VistaInfoDia.svelte
+
+---------------------------
+[PRODUCCIÓN]
+
+( ) Activar encriptación
+    https://pocketbase.io/docs/going-to-production/#enable-settings-encryption
+
+( ) Incrementar cantidad de archivos abiertos
+    https://pocketbase.io/docs/going-to-production/#increase-the-open-file-descriptors-limit
+
+( ) Implementar respaldos automáticos
+    a. AWS S3 (soportado por pocketbase)
+    b. VPS Disk + Google Drive
+
+( ) Usar Dockerfile para despliegues
+    https://pocketbase.io/docs/going-to-production/#using-docker
+
+( ) Usar Devcontainer para desarrollo
+
+( ) Usar SMTP para correos
+    https://pocketbase.io/docs/going-to-production/#use-smtp-mail-server
+
+( ) Implementar notificaciones de uso por correo
+

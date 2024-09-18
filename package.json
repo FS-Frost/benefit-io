@@ -7,7 +7,7 @@
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "sync-db": "bunx pocketbase-typegen --env --out src/lib/dbTypes.ts"
+    "sync-db": "bunx pocketbase-typegen --env .env_pocketbase_typegen --out src/lib/dbTypes.ts"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",

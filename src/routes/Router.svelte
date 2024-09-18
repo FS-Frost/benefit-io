@@ -12,7 +12,9 @@
 
     onMount(() => {
         activePage.subscribe((newActivePage) => {
-            storeViewMode.set(newActivePage === "admin" ? "admin" : "user");
+            storeViewMode.set(
+                newActivePage?.startsWith("admin") ? "admin" : "user",
+            );
 
             if (newActivePage == null) {
                 return;
