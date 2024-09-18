@@ -4,7 +4,7 @@
     import { onMount } from "svelte";
     import Router from "./Router.svelte";
     import { z } from "zod";
-    import { obtenerUsuario, storeUsuario, Usuario } from "$lib/auth";
+    import { storeUsuario, Usuario } from "$lib/auth";
 
     const BuildInfo = z.object({
         time: z.number().default(0),

@@ -1,9 +1,9 @@
 import { expect, test } from "bun:test";
-import { obtenerTarjetas, type FilaTarjetas } from "./data";
+import { convertirTarjetas, type FilaTarjeta } from "./data";
 import type { Producto } from "./beneficios";
 
 test("obtener tarjetas desde JSON", () => {
-    const filas: FilaTarjetas[] = [
+    const filas: FilaTarjeta[] = [
         {
             "Institución Bancaria": "Banco Santander",
             "Tipo de Producto": "Tarjeta de Crédito",
@@ -44,7 +44,7 @@ test("obtener tarjetas desde JSON", () => {
         },
     ];
 
-    const tarjetasObtenidas = obtenerTarjetas(filas);
+    const tarjetasObtenidas = convertirTarjetas(filas);
 
     expect(tarjetasObtenidas).toEqual(tarjetasEsperadas);
 });

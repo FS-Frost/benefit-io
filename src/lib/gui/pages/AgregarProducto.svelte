@@ -4,7 +4,6 @@
     import { KEY_PRODUCTOS } from "$lib/session";
     import { Producto } from "$lib/beneficios";
     import { obtenerTarjetas } from "$lib/data";
-    import jsonTarjetas from "$lib/jsonTarjetas";
     import Swal from "sweetalert2";
 
     let selectInstitucion: HTMLElement | null = null;
@@ -191,7 +190,7 @@
     }
 
     onMount(() => {
-        tarjetas = obtenerTarjetas(jsonTarjetas);
+        tarjetas = obtenerTarjetas();
         filtrarInstituciones();
     });
 </script>

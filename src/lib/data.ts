@@ -2,7 +2,13 @@ import type { Descuento, Producto } from "./beneficios";
 import jsonDescuentos from "./jsonDescuentos";
 import jsonTarjetas from "./jsonTarjetas";
 
+export type FilaDescuento = typeof jsonDescuentos[number];
+
 export function obtenerDescuentos(): Descuento[] {
+    return convertirDescuentos(jsonDescuentos);
+}
+
+export function convertirDescuentos(filas: FilaDescuento[]): Descuento[] {
     const descuentos: Descuento[] = [];
 
     const meses: string[] = [
@@ -21,11 +27,11 @@ export function obtenerDescuentos(): Descuento[] {
     ];
 
     try {
-        for (const fila of jsonDescuentos) {
+        for (const fila of filas) {
             const descuento = Number(
                 fila["Descuento"]
                     .replaceAll("$", "")
-                    .replaceAll(".", "")
+                    .replaceAll(",", "")
                     .replaceAll("%", "")
                     .replaceAll(" ", "")
             );
@@ -74,9 +80,13 @@ export function obtenerDescuentos(): Descuento[] {
     return descuentos;
 }
 
-export type FilaTarjetas = typeof jsonTarjetas[number];
+export type FilaTarjeta = typeof jsonTarjetas[number];
 
-export function obtenerTarjetas(filas: FilaTarjetas[]): Producto[] {
+export function obtenerTarjetas(): Producto[] {
+    return convertirTarjetas(jsonTarjetas);
+}
+
+export function convertirTarjetas(filas: FilaTarjeta[]): Producto[] {
     const productos: Producto[] = [];
 
     for (const fila of filas) {
