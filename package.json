@@ -25,6 +25,7 @@
   },
   "type": "module",
   "dependencies": {
+    "exceljs": "^4.4.0",
     "pocketbase": "^0.21.5",
     "sweetalert2": "^11.14.0",
     "zod": "^3.23.8"
