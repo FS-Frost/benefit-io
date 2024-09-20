@@ -72,8 +72,6 @@ export async function iniciarSesionGoogle(): Promise<Usuario | null> {
 
             const authData = AuthData.parse(authResponse);
             usuario = authData.record;
-            usuario.avatar = authData.meta?.avatarUrl ?? "";
-            usuario.name = authData.meta?.rawUser.given_name ?? authData.meta?.rawUser.name ?? usuario.email;
         } catch (error) {
             console.error("error al iniciar sesión con google", error);
             return null;

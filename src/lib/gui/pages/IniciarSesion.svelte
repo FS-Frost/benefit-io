@@ -14,7 +14,7 @@
 
         await Swal.fire({
             icon: "success",
-            title: `¡Hola, ${usuario.name}!`,
+            title: `¡Hola, ${usuario.email}!`,
             confirmButtonText: "Aceptar",
         });
     }
