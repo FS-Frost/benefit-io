@@ -7,13 +7,41 @@ export const POCKETBASE_URL: string = "https://benefit.pockethost.io";
 export const storeUsuario = writable<Usuario | null>();
 
 export const Usuario = z.object({
-    email: z.string().min(3),
+    avatar: z.string(),
+    collectionId: z.string(),
+    collectionName: z.string(),
+    created: z.string(),
+    email: z.string(),
+    emailVisibility: z.boolean(),
+    id: z.string(),
+    name: z.string(),
+    updated: z.string(),
+    username: z.string(),
+    verified: z.boolean(),
 });
 
 export type Usuario = z.infer<typeof Usuario>;
 
+export const AuthData = z.object({
+    token: z.string(),
+    meta: z.object({
+        isNew: z.boolean(),
+        email: z.string(),
+        avatarUrl: z.string().nullish(),
+        rawUser: z.object({
+            family_name: z.string().nullish(),
+            given_name: z.string().nullish(),
+            name: z.string().nullish(),
+        }),
+    }).nullish(),
+    record: Usuario,
+});
+
+export type AuthData = z.infer<typeof AuthData>;
+
 export function obtenerUsuario(): Usuario | null {
     const pb = new PocketBase(POCKETBASE_URL);
+
     if (!pb.authStore.isValid) {
         return null;
     }
@@ -38,11 +66,14 @@ export async function iniciarSesionGoogle(): Promise<Usuario | null> {
                 break AUTH;
             }
 
-            const authData = await pb
+            const authResponse = await pb
                 .collection("users")
                 .authWithOAuth2({ provider: "google" });
 
-            usuario = Usuario.parse(authData.record);
+            const authData = AuthData.parse(authResponse);
+            usuario = authData.record;
+            usuario.avatar = authData.meta?.avatarUrl ?? "";
+            usuario.name = authData.meta?.rawUser.given_name ?? authData.meta?.rawUser.name ?? usuario.email;
         } catch (error) {
             console.error("error al iniciar sesión con google", error);
             return null;

@@ -60,7 +60,7 @@
     {#if viewMode === "user"}
         <BusquedaBeneficios />
 
-        <p class="usuario">¡Hola, {usuario.email}!</p>
+        <p class="usuario">¡Hola, {usuario.name}!</p>
 
         {#if fechaActualizacion.length > 0}
             <p class="actualizacion">Actualizado el {fechaActualizacion}</p>
