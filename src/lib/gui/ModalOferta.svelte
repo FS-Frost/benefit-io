@@ -1,11 +1,12 @@
 <script lang="ts">
-    import { createEventDispatcher } from "svelte";
+    import { createEventDispatcher, onMount } from "svelte";
     import { Oferta, Producto } from "$lib/beneficios";
     import Modal from "./Modal.svelte";
 
     let dia: string = "";
     let producto: Producto = Producto.parse({});
     let oferta: Oferta = Oferta.parse({});
+    let hoy: string = "";
 
     const dispatch = createEventDispatcher<{
         open: undefined;
@@ -41,6 +42,14 @@
         modal.close();
         dispatch("close");
     }
+
+    onMount(() => {
+        hoy = new Date()
+            .toLocaleDateString("es-ES", {
+                weekday: "long",
+            })
+            .toLowerCase();
+    });
 </script>
 
 <Modal
@@ -52,7 +61,14 @@
 >
     <div class="mt-4">
         <p>
-            Los <b>{dia.toLowerCase()}</b> tienes un descuento del
+            Los
+            <b>
+                {dia.toLowerCase()}
+                {#if dia.toLowerCase() === hoy}
+                    (hoy)
+                {/if}
+            </b>
+            tienes un descuento del
             <b>{oferta.descuento} %</b>
             en
             <b>{oferta.local}</b>
