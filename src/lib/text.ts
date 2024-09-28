@@ -1,4 +1,4 @@
-const appName: string = "Benefit.io";
+const appName: string = "Benefly.cl";
 
 export default {
     aceptar: "Aceptar",

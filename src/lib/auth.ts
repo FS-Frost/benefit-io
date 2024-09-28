@@ -2,8 +2,7 @@ import { writable } from "svelte/store";
 import PocketBase from "pocketbase";
 import { z } from "zod";
 
-// export const POCKETBASE_URL: string = "https://benefit.pockethost.io";
-export const POCKETBASE_URL: string = "https://app.benefly.cl";
+export const POCKETBASE_URL: string = "https://benefit.pockethost.io";
 
 export const storeUsuario = writable<Usuario | null>();
 

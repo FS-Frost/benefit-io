@@ -6,6 +6,7 @@
         type FilaDescuento,
         type FilaTarjeta,
     } from "$lib/data";
+    import { newDatabaseConnection } from "$lib/database";
     import FileInput from "$lib/gui/FileInput.svelte";
     import Excel from "exceljs";
 
@@ -17,14 +18,15 @@
     let erroresVisibles: boolean = false;
 
     async function validarPlanilla(): Promise<void> {
-        // const pb = newDatabaseConnection();
-        // const record = await pb
-        //     .collection("producto")
-        //     .getFirstListItem(`nombre="T. Crédito"`, {
-        //         fields: "id, nombre, expand.institucion.id, expand.institucion.nombre",
-        //         expand: "institucion",
-        //     });
-        // console.log(record);
+        const pb = newDatabaseConnection();
+        console.log("TOKEN", pb.authStore.token);
+        const record = await pb
+            .collection("producto")
+            .getFirstListItem(`nombre="T. Crédito"`, {
+                fields: "id, nombre, expand.institucion.id, expand.institucion.nombre",
+                expand: "institucion",
+            });
+        console.log(record);
 
         if (input.files == null || input.files.length === 0) {
             return;
