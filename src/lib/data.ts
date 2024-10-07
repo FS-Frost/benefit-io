@@ -50,6 +50,10 @@ export function convertirDescuentos(filas: FilaDescuento[]): Descuento[] {
                         for (const segmento of segmentosTarjeta) {
                             for (const categoria of categoriasTarjeta) {
                                 for (const dia of dias) {
+                                    if (descuentos.find(x => x.producto.institucion === institucion && x.producto.marca === marcaTarjeta && x.producto.nombre === producto && x.producto.segmento === segmento && x.dia === dia && x.descuento === descuento) != null) {
+                                        continue;
+                                    }
+
                                     descuentos.push({
                                         ano: Number(fila["Año"]),
                                         mes: fila["Mes"],
