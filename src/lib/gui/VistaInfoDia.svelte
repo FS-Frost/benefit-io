@@ -37,7 +37,7 @@
 
 <div class="dia">
     <div class="subtitulo">
-        Septiembre: {dia.dia}
+        Octubre: {dia.dia}
         {#if dia.dia.toLowerCase() === hoy}
             (hoy)
         {/if}
